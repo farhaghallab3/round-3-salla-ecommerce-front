@@ -5,6 +5,55 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  /* Backgrounds */
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #f8f8f8;
+  --color-surface-badge: #f55157;
+  --color-surface-dark: #1d1f1f;
+  --color-surface-shade-a: #e0f6f0;
+  --color-surface-shade-b: #ffefda;
+  --color-surface-shade-c: #fddcdd;
+  /* Accent */
+  --color-accent-primary: #62d0b6;
+  --color-accent-secondary: rgba(98, 208, 182, 0.5);
+  /* Content */
+  --color-content-light: #ffffff;
+  --color-content-subtle: #f8f8f8;
+  --color-content-muted: #eeeeee;
+  --color-content-dim: #a5a5a5;
+  --color-content-base: #666666;
+  --color-content-dark: #333333;
+  --color-content-sale: #f55157;
+  --color-content-border: #d6d6d6;
+  /* Icons */
+  --color-filled-star: #ffc62a;
+  --color-filled-heart: #f55157;
+  --color-empty: #b6b6b6;
+
+  /* Font Sizes */
+  --text-micro: 12px;
+  --text-small: 14px;
+  --text-medium: 16px;
+  --text-large: 18px;
+  --text-xlarge: 20px;
+  --text-2xlarge: 22px;
+  --text-huge: 24px;
+
+  /* Font Weights */
+  --font-weight-ultralight: 300;
+  --font-weight-light: 400;
+  --font-weight-regular: 500;
+  --font-weight-strong: 600;
+  --font-weight-heavy: 700;
+  --font-weight-ultraHeavy: 800;
+  --font-weight-max: 900;
+
+  /* Spacings */
+  --spacing-main-x: 200px;
+  --spacing-main-y: 56px;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
