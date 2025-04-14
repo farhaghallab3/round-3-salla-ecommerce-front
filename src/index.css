@@ -50,13 +50,13 @@
   --font-weight-max: 900;
 
   /* Spacings */
-  --space-tiny: 10px;
-  --space-small: 16px; /* spacing between cards/products/banners on mobile, section horizontal padding on mobile */
-  --space-medium: 24px; /* spacing between cards/products/banners on large screen */
-  --space-large: 32px;
-  --space-xlarge: 48px; /* vertical spacing between sections on mobile*/
-  --space-xxlarge: 56px; /* section vertical padding, vertical spacing between sections on large screen*/
-  --space-huge: 200px; /* section horizontal padding on large screen*/
+  --spacing-tiny: 10px;
+  --spacing-small: 16px; /* spacing between cards/products/banners on mobile, section horizontal padding on mobile */
+  --spacing-medium: 24px; /* spacing between cards/products/banners on large screen */
+  --spacing-large: 32px;
+  --spacing-xlarge: 48px; /* vertical spacing between sections on mobile*/
+  --spacing-xxlarge: 56px; /* section vertical padding, vertical spacing between sections on large screen*/
+  --spacing-huge: 200px; /* section horizontal padding on large screen*/
 }
 
 :root {
