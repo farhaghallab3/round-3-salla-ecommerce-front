@@ -12,7 +12,7 @@ function App() {
         element: <Layout />,
         children: [{ index: true, element: <Home /> }],
       },
-    ]
+    ],
     { basename: "/round-3-salla-ecommerce-front" }
   );
   return (
