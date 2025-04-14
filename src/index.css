@@ -177,3 +177,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+button,
+Link {
+  @apply cursor-pointer;
+}
