@@ -7,15 +7,15 @@
 
 @theme {
   /* Backgrounds */
-  --color-surface-primary: #ffffff;
-  --color-surface-secondary: #f8f8f8;
-  --color-surface-badge: #f55157;
-  --color-surface-dark: #1d1f1f;
-  --color-surface-shade-a: #e0f6f0;
-  --color-surface-shade-b: #ffefda;
-  --color-surface-shade-c: #fddcdd;
+  --color-surface-primary: #ffffff; /* sections, product-cards*/
+  --color-surface-secondary: #f8f8f8; /* newsletter section*/
+  --color-surface-badge: #f55157; /* sale badge*/
+  --color-surface-dark: #1d1f1f; /* footer bottom-bar*/
+  --color-surface-shade-a: #e0f6f0; /* ads-section-card-1 */
+  --color-surface-shade-b: #ffefda; /* ads-section-card-2 */
+  --color-surface-shade-c: #fddcdd; /* ads-section-card-3 */
   /* Accent */
-  --color-accent-primary: #62d0b6;
+  --color-accent-primary: #62d0b6; /* accent-color */
   --color-accent-secondary: rgba(98, 208, 182, 0.5);
   /* Content */
   --color-content-light: #ffffff;
@@ -50,8 +50,13 @@
   --font-weight-max: 900;
 
   /* Spacings */
-  --spacing-main-x: 200px;
-  --spacing-main-y: 56px;
+  --space-tiny: 10px;
+  --space-small: 16px; /* spacing between cards/products/banners on mobile, section horizontal padding on mobile */
+  --space-medium: 24px; /* spacing between cards/products/banners on large screen */
+  --space-large: 32px;
+  --space-xlarge: 48px; /* vertical spacing between sections on mobile*/
+  --space-xxlarge: 56px; /* section vertical padding, vertical spacing between sections on large screen*/
+  --space-huge: 200px; /* section horizontal padding on large screen*/
 }
 
 :root {
