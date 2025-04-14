@@ -13,7 +13,7 @@ function App() {
         children: [{ index: true, element: <Home /> }],
       },
     ]
-    // { basename: "/round-3-travel-front" }
+    { basename: "/round-3-salla-ecommerce-front" }
   );
   return (
     <QueryClientProvider client={queryClient}>
