@@ -6,7 +6,7 @@ export const Home = () => {
   // const api = import.meta.env.VITE_API_BASE_URL;
 
   return (
-    <div>
+    <div className="max-w-[1920px] mx-auto">
       <FeaturesSection />
       {/* special products 1 */}
       <SpecialProducts title="منتجات خاصة" />
