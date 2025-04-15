@@ -11,6 +11,7 @@ export const Layout = () => {
       <Outlet />
 
       <Testimonials />
+      <Footer />
 
     
 
