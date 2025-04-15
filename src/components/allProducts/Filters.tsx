@@ -52,7 +52,11 @@ export const Filters = () => {
 
   return (
     <div className="hidden lg:block md:w-[342px] border border-content-muted">
-      <Accordion type="multiple" dir="rtl">
+      <Accordion
+        type="multiple"
+        dir="rtl"
+        defaultValue={["item-1", "item-2", "item-3"]}
+      >
         {/* category */}
         <AccordionItem value="item-1" className="p-4">
           <AccordionTrigger className="text-[16px] font-medium text-content-dark">
