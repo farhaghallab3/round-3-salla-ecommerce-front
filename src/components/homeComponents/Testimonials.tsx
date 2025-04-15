@@ -99,7 +99,7 @@ export const Testimonials = () => {
   {renderStars(item.rating)}
 
   
-  <img src="/src/assets/images/quots.png" className="w-10 h-10 opacity-30" alt="quote" />
+  <img src="src/assets/images/quots.png" className="w-10 h-10 opacity-70" alt="quote" />
 </div>
 
 
