@@ -10,6 +10,7 @@ function App() {
       {
         path: "",
         element: <Layout />,
+        
         children: [{ index: true, element: <Home /> }],
       },
     ]
