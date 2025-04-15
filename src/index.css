@@ -226,6 +226,6 @@ button,
 Link {
   @apply cursor-pointer;
 }
-
-
-
+.tansition{
+  transition: all 0.3s ease-in-out;
+}
