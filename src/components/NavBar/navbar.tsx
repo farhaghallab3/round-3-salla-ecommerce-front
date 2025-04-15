@@ -1,6 +1,6 @@
 // src/components/Header.tsx
 import { FC, useState } from 'react';
-import { ShoppingCart, User, ChevronDown, Phone, Mail, Search, Menu, X } from 'lucide-react';
+import { ShoppingCart, User, ChevronDown, Phone, Mail, Search, Menu, X , LogOut} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 
@@ -20,7 +20,7 @@ const HeaderNavbar: FC = () => {
   
 
   return (
-    <div className='w-full overflow-x-hidden max-w-[100vw]'>
+    <div className=' w-full overflow-x-hidden max-w-[100vw]'>
     <header className=" w-full border-b text-sm font-light ovevrflow-x-hidden"> 
       {/* Top bar */}
       <div className=" hidden lg:flex justify-between items-center px-4 py-2 bg-gray-100 text-gray-600  px-4 sm:px-6 lg:px-52   ">
@@ -81,7 +81,7 @@ const HeaderNavbar: FC = () => {
 
 {isLoggedIn ? (
             <div className="flex items-center gap-2 pt-8 mb-4  ">
-              <img src={userImage} alt="Profile" className="w-20 h-20 rounded-full" />
+              <img src={userImage} alt="Profile" className="w-15 h-15 rounded-full" />
               <span className='font-regular text-gray-700'>{userName}</span>
             </div>
           ) : (
@@ -118,19 +118,30 @@ const HeaderNavbar: FC = () => {
           </ul>
           <div className="mt-6 border-t pt-4">
             <nav className="flex flex-col gap-4">
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>كل المنتجات</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>الكترونيات</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>موبايلات</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>كاميرات مراقبة</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>سماعات رقمية</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>كاميرات رقمية</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>اكسسوارات</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>شاشات كمبيوتر</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>الكترونيات</Link>
-              <Link to="/products" className='text-center border rounded-full bg-[#21c2ac] font-regular'>سماعات</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm font-regular '>كل المنتجات</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm font-regular '>الكترونيات</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm font-regular '>موبايلات</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm font-regular '>كاميرات مراقبة</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm  font-regular '>سماعات رقمية</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm font-regular '>كاميرات رقمية</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm  font-regular'>اكسسوارات</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm  font-regular '>شاشات كمبيوتر</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm font-regular '>الكترونيات</Link>
+              <Link to="/products" className='border-2 text-center text-accent-primary border-accent-primary  items-center gap-2 text-sm px-4 py-2 rounded-sm font-regular '>سماعات</Link>
+              <Link 
+  to="/login" 
+  className="border-2 text-accent-primary border-accent-primary flex items-center gap-2 text-lg px-4 py-2 rounded-full bg-accent-primary text-white font-regular"
+>
+  <LogOut size={18} className='text-white' />
+  تسجيل خروج
+</Link>
+
+
             </nav>
           </div>
-
+         
+          
+          
         </div>
       )}
 
