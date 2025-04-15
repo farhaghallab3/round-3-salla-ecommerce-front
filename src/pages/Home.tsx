@@ -7,10 +7,11 @@ export const Home = () => {
   // const api = import.meta.env.VITE_API_BASE_URL;
 
   return (
+
     <div>
      
       
-      {/* features */}
+
       <FeaturesSection />
       {/* special products 1 */}
       <SpecialProducts title="منتجات خاصة" />

@@ -79,7 +79,7 @@ type Props = {
 
 export const SpecialProducts = (Props: Props) => {
   return (
-    <div className="px-4 sm:px-6 lg:px-52 max-w-[1920px] mx-auto mt-12">
+    <div className="responsive-padding-x mx-auto mt-12">
       {/* header */}
       <div className="flex items-center justify-between">
         <div>
@@ -92,7 +92,7 @@ export const SpecialProducts = (Props: Props) => {
         </div>
         <Link
           to={"/"}
-          className="border-2 text-accent-primary border-accent-primary flex items-center gap-2 text-sm px-4 py-2 rounded-sm self-end"
+          className="border-2 text-accent-primary border-accent-primary flex items-center gap-2 text-sm px-4 py-2 rounded-sm self-end whitespace-nowrap"
         >
           عرض الكل
           <ArrowLeft size={16} />
