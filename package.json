@@ -25,12 +25,9 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-<<<<<<< farha
     "keen-slider": "^6.8.6",
-=======
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
->>>>>>> main
     "lucide-react": "^0.488.0",
     "npx": "^10.2.2",
     "react": "^19.0.0",
