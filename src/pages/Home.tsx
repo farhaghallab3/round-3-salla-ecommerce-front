@@ -1,6 +1,8 @@
+import CategoriesHome from "@/components/CategoriesHome.tsx/CategoriesHome";
 import { FeaturesSection } from "../components/homeComponents/FeaturesSection";
 import { LapBanner } from "../components/homeComponents/LapBanner";
 import { SpecialProducts } from "../components/homeComponents/SpecialProducts";
+import BannerBase from "@/components/BannerBestDiscounts/BannerBase";
 
 
 export const Home = () => {
@@ -18,6 +20,8 @@ export const Home = () => {
       <LapBanner />
       {/* special products 2 */}
       <SpecialProducts title="منتجات مميزة " />
+      <CategoriesHome />
+      <BannerBase/>
     </div>
   );
 };
