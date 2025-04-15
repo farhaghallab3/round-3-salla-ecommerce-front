@@ -11,7 +11,7 @@ type ProductCardProps = {
 
 export const ProductCard = (Props: ProductCardProps) => {
   return (
-    <div className="relative flex flex-col border rounded border-content-muted hover:border-accent-primary">
+    <div className="relative flex flex-col border rounded border-content-muted hover:border-accent-primary ">
       <img
         src={Props.image}
         alt={Props.title}
@@ -49,12 +49,15 @@ export const ProductCard = (Props: ProductCardProps) => {
 
         {/* buttons */}
         <div className="flex gap-2 mt-2">
-          <button className="w-full py-3 flex items-center justify-center gap-2 text-medium text-content-dark border rounded border-content-muted">
-            <ShoppingCart size={16} />
+          <button className="w-full py-3 flex items-center justify-center gap-2 text-medium text-content-dark border rounded border-content-muted hover:bg-button-primary hover:text-white">
+            <ShoppingCart size={16} className="hidden lg:block" />
             اضف للسلة
           </button>
-          <button className="py-3 flex items-center justify-center border rounded border-content-muted px-4 text-content-dim">
-            <Heart size={16} />
+          <button className="group py-3 flex items-center justify-center border rounded border-content-muted px-4 text-content-dim">
+            <Heart
+              size={16}
+              className="fill-transparent group-hover:fill-button-tertiary"
+            />
           </button>
         </div>
       </div>

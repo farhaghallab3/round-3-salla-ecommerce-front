@@ -35,9 +35,9 @@ const BANNERS: {
 
 export const FeaturesSection = () => {
   return (
-    <div className="px-4 sm:px-6 lg:px-52 max-w-[1920px] mx-auto">
+    <div className="responsive-padding-x">
       {/* features */}
-      <div className="grid 2xl:grid-cols-3 grid-cols-1">
+      <div className="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {FEATURES.map((feature) => (
           <div
             key={feature.title}

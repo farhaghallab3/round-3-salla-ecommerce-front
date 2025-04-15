@@ -1,6 +1,4 @@
 @import "tailwindcss";
-
-@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -51,6 +49,10 @@
   --color-icon-default: #b6b6b6;
   --color-filled-star: #ffc62a;
   --color-filled-heart: #f55157;
+
+  --color-empty: #b6b6b6;
+  
+
 
   /* === Font Sizes === */
   /* Headings */
@@ -224,7 +226,6 @@ button,
 Link {
   @apply cursor-pointer;
 }
-
 .tansition{
   transition: all 0.3s ease-in-out;
 }
