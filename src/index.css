@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  /* === Colors === */
   /* Backgrounds */
   --color-surface-primary: #ffffff; /* sections, product-cards*/
   --color-surface-secondary: #f8f8f8; /* newsletter section*/
@@ -14,7 +15,10 @@
   --color-surface-shade-c: #fddcdd; /* ads-section-card-3 */
   /* Accent */
   --color-accent-primary: #62d0b6; /* accent-color */
-  --color-accent-secondary: rgba(98, 208, 182, 0.5);
+  --color-accent-primary-hover: #81d9c5;
+  --color-accent-primary-active: #38bc9e;
+  --color-accent-primary-disabled: #d0f1e9;
+  --color-accent-secondary: #62d0b6; /* accent-color */
   /* Content */
   --color-content-light: #ffffff;
   --color-content-subtle: #f8f8f8;
@@ -24,38 +28,79 @@
   --color-content-dark: #333333;
   --color-content-sale: #f55157;
   --color-content-border: #d6d6d6;
+  /* === Buttons === */
+  --color-button-outline: #ffffff;
+  /* Primary */
+  --color-button-primary: #62d0b6;
+  --color-button-primary-hover: #81d9c5;
+  --color-button-primary-active: #38bc9e;
+  --color-button-primary-disabled: #d0f1e9;
+  /* Secondary */
+  --color-button-secondary: #1d1f1f;
+  --color-button-secondary-hover: #444444;
+  --color-button-secondary-active: #333333;
+  --color-button-secondary-disabled: #eeeeee;
+  /* Tertiary */
+  --color-button-tertiary: #f55157;
+  --color-button-tertiary-hover: #f77479;
+  --color-button-tertiary-active: #ca4146;
+  --color-button-tertiary-disabled: #fddcdd;
   /* Icons */
+  --color-icon-default: #b6b6b6;
   --color-filled-star: #ffc62a;
   --color-filled-heart: #f55157;
+
   --color-empty: #b6b6b6;
   
 
-  /* Font Sizes */
-  --text-micro: 12px;
-  --text-small: 14px;
-  --text-medium: 16px;
-  --text-large: 18px;
-  --text-xlarge: 20px;
-  --text-2xlarge: 22px;
-  --text-huge: 24px;
 
-  /* Font Weights */
-  --font-weight-ultralight: 300;
-  --font-weight-light: 400;
-  --font-weight-regular: 500;
-  --font-weight-strong: 600;
-  --font-weight-heavy: 700;
-  --font-weight-ultraHeavy: 800;
-  --font-weight-max: 900;
+  /* === Font Sizes === */
+  /* Headings */
+  --text-heading-small: 1.125rem; /* [18px] */
+  --text-heading-medium: 1.25rem; /* [20px] */
+  --text-heading-large: 1.5rem; /* [24px] */
+  --text-heading-xlarge: 2.25rem; /* [36px] */
+  --text-heading-huge: 3rem; /* [48px] */
+  /* Body text */
+  --text-body-micro: 0.75rem; /* [12px] */
+  --text-body-small: 0.875rem; /* [14px] */
+  --text-body-base: 1rem; /* [16px] */
+  --text-body-medium: 1.25rem; /* [20px] */
+  /* Buttons */
+  --text-button-base: 1rem; /* [16px] */
 
-  /* Spacings */
-  --spacing-tiny: 10px;
-  --spacing-small: 16px; /* spacing between cards/products/banners on mobile, section horizontal padding on mobile */
-  --spacing-medium: 24px; /* spacing between cards/products/banners on large screen */
-  --spacing-large: 32px;
-  --spacing-xlarge: 48px; /* vertical spacing between sections on mobile*/
-  --spacing-xxlarge: 56px; /* section vertical padding, vertical spacing between sections on large screen*/
-  --spacing-huge: 200px; /* section horizontal padding on large screen*/
+  /* === Font Weights === */
+  /* Headings */
+  --font-weight-heading-bold: 700;
+  --font-weight-heading-medium: 500;
+  /* Font Weights - Body */
+  --font-weight-body-regular: 400;
+  /* Font Weights - Button */
+  --font-weight-button-medium: 500;
+
+  /* === Spacing === */
+  --spacing-micro: 0.125rem; /* [2px] */
+  --spacing-xs: 0.25rem; /* [4px] */
+  --spacing-sm: 0.5rem; /* [8px] */
+  --spacing-md: 1rem; /* [16px] - spacing between cards/products/banners on mobile, section horizontal padding on mobile */
+  --spacing-lg: 1.5rem; /* [24px] - spacing between cards/products/banners on large screen */
+  --spacing-xl: 2rem; /* [32px] */
+  --spacing-2xl: 2.5rem; /* [40px] */
+  --spacing-3xl: 3rem; /* [48px] - vertical spacing between sections on mobile */
+  --spacing-4xl: 3.5rem; /* [56px] - section vertical padding, vertical spacing between sections on large screen */
+  --spacing-5xl: 4rem; /* [64px] */
+  --spacing-6xl: 4.5rem; /* [72px] */
+  --spacing-7xl: 5rem; /* [80px] */
+  --spacing-8xl: 5.5rem; /* [88px] */
+  --spacing-9xl: 6rem; /* [96px] */
+  --spacing-10xl: 12.5rem; /* [200px] - section horizontal padding on large screen */
+
+  /* Border Radius */
+  --radius-small: 0.25rem; /* [4px] */
+  --radius-medium: 0.5rem; /* [8px] */
+  --radius-large: 1rem; /* [16px] */
+  --radius-xlarge: 1.5rem; /* [24px] */
+  --radius-2xlarge: 2rem; /* [32px] */
 }
 
 :root {
@@ -181,17 +226,6 @@ button,
 Link {
   @apply cursor-pointer;
 }
-.responsive-margin-y {
-  /* Section vertical margin */
-  @apply my-12 md:my-13 lg:my-14;
-}
 
-.responsive-padding-x {
-  /* Section horizontal padding */
-  @apply px-4 md:px-25 lg:px-50;
-}
 
-.responsive-padding-y {
-  /* Section vertical padding */
-  @apply py-12 md:py-13 lg:py-14;
-}
+
