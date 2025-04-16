@@ -49,11 +49,11 @@ export const ProductCard = (Props: ProductCardProps) => {
 
         {/* buttons */}
         <div className="flex gap-2 mt-2">
-          <button className="w-full py-3 flex items-center justify-center gap-2 text-medium text-content-dark border rounded border-content-muted hover:bg-button-primary hover:text-white">
+          <button className="w-full tansition py-3 flex items-center justify-center gap-2 text-medium text-content-dark border rounded border-content-muted hover:bg-button-primary hover:text-white">
             <ShoppingCart size={16} className="hidden lg:block" />
             اضف للسلة
           </button>
-          <button className="group py-3 flex items-center justify-center border rounded border-content-muted px-4 text-content-dim">
+          <button className="group py-3 flex items-center justify-center border rounded border-content-muted px-4 text-content-dim tansition">
             <Heart
               size={16}
               className="fill-transparent group-hover:fill-button-tertiary"

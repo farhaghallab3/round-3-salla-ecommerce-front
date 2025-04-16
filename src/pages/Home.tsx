@@ -1,10 +1,12 @@
+import CategoriesHome from "@/components/homeComponents/CategoriesHome";
 import AdsSection from "@/components/homeComponents/AdsSection";
 import { FeaturesSection } from "../components/homeComponents/FeaturesSection";
 import { LapBanner } from "../components/homeComponents/LapBanner";
 import SlidersSection from "../components/homeComponents/SlidersSection";
 import { SpecialProducts } from "../components/homeComponents/SpecialProducts";
-import CategoriesHome from "@/components/CategoriesHome.tsx/CategoriesHome";
-import BannerBase from "@/components/BannerBestDiscounts/BannerBase";
+import BannerBase from "@/components/homeComponents/BannerBestDiscounts/BannerBase";
+import EndSoonHome from "@/components/homeComponents/EndSoonHome";
+import NewArrival from "@/components/homeComponents/NewArrival";
 import HeroSection from "@/components/homeComponents/HeroSection";
 
 export const Home = () => {
@@ -20,6 +22,8 @@ export const Home = () => {
       <AdsSection />
       <SlidersSection />
       {/* special products 2 */}
+      <EndSoonHome/>
+      <NewArrival/>
       <SpecialProducts title="منتجات مميزة " />
       <CategoriesHome />
       <BannerBase />
