@@ -79,7 +79,7 @@ type Props = {
 
 export const SpecialProducts = (Props: Props) => {
   return (
-    <div className="responsive-padding-x mx-auto mt-12">
+    <div className="responsive-padding-x responsive-margin-y mx-auto">
       {/* header */}
       <div className="flex items-center justify-between">
         <div>
@@ -91,7 +91,7 @@ export const SpecialProducts = (Props: Props) => {
           </p>
         </div>
         <Link
-          to={"/"}
+          to={"/products"}
           className="border-2 text-accent-primary border-accent-primary flex items-center gap-2 text-sm px-4 py-2 rounded-sm self-end whitespace-nowrap"
         >
           عرض الكل
@@ -99,7 +99,7 @@ export const SpecialProducts = (Props: Props) => {
         </Link>
       </div>
       {/* products grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center mt-12">
         {products.map((product, index) => (
           <ProductCard key={index} {...product} />
         ))}
