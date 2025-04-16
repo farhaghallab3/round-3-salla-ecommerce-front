@@ -2,9 +2,11 @@ import { useEffect, useRef } from "react";
 import heroImageLg from "../../assets/images/hero-section-banner-lg.png";
 import heroImageSm from "../../assets/images/hero-section-banner-sm.png";
 import { Link } from "react-router-dom";
+import getDate from "@/utils/getDate";
 
 function HeroSection() {
   const imageRef = useRef<HTMLImageElement | null>(null);
+  const currentYear = getDate();
 
   useEffect(() => {
     const handleImage = () => {
@@ -36,7 +38,7 @@ function HeroSection() {
 
       <div className="absolute start-1/2 top-1/2 -translate-y-1/2 translate-x-1/2 flex flex-col items-center gap-md w-full px-lg md:w-[67%] text-content-light text-center z-10">
         <h2 className="font-heading-medium md:font-heading-bold text-heading-xlarge md:text-heading-huge">
-          أفضل التخفيضات 2022
+          أفضل التخفيضات {currentYear}
         </h2>
 
         <p className="font-body-regular text-body-small md:text-body-base text-content-subtle">
