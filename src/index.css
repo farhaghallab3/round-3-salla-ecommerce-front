@@ -50,8 +50,6 @@
   --color-filled-star: #ffc62a;
   --color-filled-heart: #f55157;
   --color-empty: #b6b6b6;
-  
-
 
   /* === Font Sizes === */
   /* Headings */
@@ -225,8 +223,19 @@ button,
 Link {
   @apply cursor-pointer;
 }
-.tansition{
-  transition: all 0.3s ease-in-out;
+.responsive-margin-y {
+  /* Section vertical margin */
+  @apply my-12 md:my-13 lg:my-14;
+}
+
+.responsive-padding-x {
+  /* Section horizontal padding */
+  @apply px-4 md:px-25 lg:px-50;
+}
+
+.responsive-padding-y {
+  /* Section vertical padding */
+  @apply py-12 md:py-13 lg:py-14;
 }
 .responsive-margin-y {  /* Section vertical margin */  
   @apply my-12 md:my-13 lg:my-14;
