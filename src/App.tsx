@@ -6,6 +6,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { Products } from "./pages/Products";
+import ProjectDetailsUpper from "./components/ProjectDetailUpper/productDetailUpper";
 
 function App() {
   const router = createBrowserRouter(
@@ -19,6 +20,10 @@ function App() {
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/productDetailUpper",
+        element: <ProjectDetailsUpper />,
       },
     ],
     { basename: "/round-3-salla-ecommerce-front" }

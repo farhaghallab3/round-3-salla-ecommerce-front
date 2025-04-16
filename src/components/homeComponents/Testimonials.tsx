@@ -78,7 +78,7 @@ export const Testimonials = () => {
         <p className="text-gray-600 mb-8">يتم استعراض بعض آراء وتجارب المستخدمين</p>
 
         {/* Arrows */}
-        <div className="flex justify-end gap-4 mb-4">
+        <div className="flex justify-end gap-4 mb-4 text-gray-500">
           <button onClick={() => instanceRef.current?.prev()} className="border rounded-full p-2">
             <ChevronRight />
           </button>
