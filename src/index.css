@@ -224,10 +224,6 @@ button,
 Link {
   @apply cursor-pointer;
 }
-.tansition {
-  transition: all 0.3s ease-in-out;
-}
-
 .responsive-margin-y {
   /* Section vertical margin */
   @apply my-12 md:my-13 lg:my-14;
