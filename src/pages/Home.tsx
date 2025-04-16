@@ -8,6 +8,7 @@ import BannerBase from "@/components/homeComponents/BannerBestDiscounts/BannerBa
 import EndSoonHome from "@/components/homeComponents/EndSoonHome";
 import NewArrival from "@/components/homeComponents/NewArrival";
 import HeroSection from "@/components/homeComponents/HeroSection";
+import VideoSection from "@/components/homeComponents/VideoSection";
 
 export const Home = () => {
   // const api = import.meta.env.VITE_API_BASE_URL;
@@ -25,6 +26,7 @@ export const Home = () => {
       <EndSoonHome/>
       <NewArrival/>
       <SpecialProducts title="منتجات مميزة " />
+      <VideoSection />
       <CategoriesHome />
       <BannerBase />
     </div>

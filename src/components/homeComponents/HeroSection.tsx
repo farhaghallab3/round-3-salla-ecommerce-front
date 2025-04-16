@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import heroImageLg from "../assets/images/hero-section-banner-lg.png";
-import heroImageSm from "../assets/images/hero-section-banner-sm.png";
+import heroImageLg from "../../assets/images/hero-section-banner-lg.png";
+import heroImageSm from "../../assets/images/hero-section-banner-sm.png";
 import { Link } from "react-router-dom";
 
 function HeroSection() {
