@@ -1,10 +1,11 @@
-import AdsSection from "../components/homeComponents/AdsSection";
+import AdsSection from "@/components/homeComponents/AdsSection";
 import { FeaturesSection } from "../components/homeComponents/FeaturesSection";
-import HeroSection from "../components/homeComponents/HeroSection";
 import { LapBanner } from "../components/homeComponents/LapBanner";
 import SlidersSection from "../components/homeComponents/SlidersSection";
 import { SpecialProducts } from "../components/homeComponents/SpecialProducts";
-import VideoSection from "../components/homeComponents/VideoSection";
+import CategoriesHome from "@/components/CategoriesHome.tsx/CategoriesHome";
+import BannerBase from "@/components/BannerBestDiscounts/BannerBase";
+import HeroSection from "@/components/homeComponents/HeroSection";
 
 export const Home = () => {
   // const api = import.meta.env.VITE_API_BASE_URL;
@@ -20,7 +21,8 @@ export const Home = () => {
       <SlidersSection />
       {/* special products 2 */}
       <SpecialProducts title="منتجات مميزة " />
-      <VideoSection />
+      <CategoriesHome />
+      <BannerBase />
     </div>
   );
 };

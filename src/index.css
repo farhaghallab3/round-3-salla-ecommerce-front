@@ -1,6 +1,4 @@
 @import "tailwindcss";
-
-@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -51,6 +49,8 @@
   --color-icon-default: #b6b6b6;
   --color-filled-star: #ffc62a;
   --color-filled-heart: #f55157;
+
+  --color-empty: #b6b6b6;
 
   /* === Font Sizes === */
   /* Headings */
@@ -237,16 +237,4 @@ Link {
 .responsive-padding-y {
   /* Section vertical padding */
   @apply py-12 md:py-13 lg:py-14;
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
 }
