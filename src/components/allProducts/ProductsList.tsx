@@ -118,20 +118,18 @@ export const ProductsList = () => {
         <ProductsLayout />
 
         {/* Filters on mobile */}
-        {showFilters && (
-          <>
-            <button
-              className={`fixed inset-0 bg-black  z-40 transition-opacity duration-300 ${
-                showFilters ? "opacity-70" : "opacity-0 pointer-events-none"
-              }`}
-              onClick={() => setShowFilters(false)}
-            ></button>
-            <FiltersMobile
-              setShowFilters={setShowFilters}
-              showFilters={showFilters}
-            />
-          </>
-        )}
+        <div className={`${showFilters ? "left-0" : "left-96"} duration-300`}>
+          <button
+            className={`fixed inset-0 bg-black z-40 transition-opacity duration-300 ${
+              showFilters ? "opacity-70" : "opacity-0 pointer-events-none"
+            }`}
+            onClick={() => setShowFilters(false)}
+          ></button>
+          <FiltersMobile
+            setShowFilters={setShowFilters}
+            showFilters={showFilters}
+          />
+        </div>
       </div>
     </div>
   );
