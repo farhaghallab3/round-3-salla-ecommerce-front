@@ -24,7 +24,7 @@ export const ProductCard = (Props: ProductCardProps) => {
         </div>
       ) : (
         Props.specialTag === "خصم" && (
-          <div className="absolute top-4 left-4 bg-red-600 text-white py-1 px-2 rounded">
+          <div className="absolute top-4 left-4 bg-surface-badge text-white py-1 px-2 rounded">
             {Props.specialTag}
           </div>
         )
