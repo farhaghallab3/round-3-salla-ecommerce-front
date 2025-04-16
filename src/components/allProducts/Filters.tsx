@@ -11,6 +11,9 @@ import { PriceFilter } from "./PriceFilter";
 import { ColorFilters } from "./ColorFilters";
 import { RatingFilters } from "./RatingFilters";
 
+import ProductAD from "@/assets/images/productsAD.png";
+
+import { Link } from "react-router-dom";
 type CategoryfilterContent = {
   title: string;
   amount: number;
@@ -117,12 +120,30 @@ export const Filters = () => {
 
         {/* Filter button */}
         <button
-          className="py-2.5 text-sm font-normal text-center text-content-dark border border-content-dark w-full rounded-sm hover:bg-accent-primary-hover hover:text-white hover:border-accent-primary-hover"
+          className="py-2.5 text-sm font-normal text-center text-content-dark border border-content-dark w-full rounded-sm hover:bg-accent-primary-hover hover:text-white hover:border-accent-primary-hover mb-2"
           onClick={() => dispatch(resetFilters())}
         >
           اعادة ضبط
         </button>
       </Accordion>
+
+      <div className="mt-4 relative">
+        <img src={ProductAD} alt="" />
+        <div className="absolute top-6 right-6 flex flex-col text-start">
+          <p className="text-body-base font-body-regular text-content-muted">
+            سماعات ديجتال
+          </p>
+          <h3 className="text-heading-large font-heading-medium text-white">
+            افضل صوت نقي
+          </h3>
+          <Link
+            to="/products"
+            className="text-body-base text-start text-white font-medium hover:underline"
+          >
+            تسوق الان
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

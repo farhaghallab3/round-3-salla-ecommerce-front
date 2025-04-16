@@ -3,6 +3,7 @@ import LapContainer from "@/assets/images/lapContainer.png";
 import { Link } from "react-router-dom";
 
 export const LapBanner = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <div className=" mx-auto mt-12">
       <div
@@ -12,15 +13,15 @@ export const LapBanner = () => {
         {/* text */}
         <div className="flex flex-col items-center lg:items-start justify-center h-full w-max gap-4">
           <h2 className="text-2xl xl:text-5xl font-bold text-white">
-            افضل التخفيضات 2025
+            افضل التخفيضات {currentYear}
           </h2>
-          <p className="text-sm text-white lg:text-medium font-regular max-w-[456px] w-[70%]">
+          <p className="text-sm text-white lg:text-medium font-regular max-w-[456px] 2xl:max-w-[600px] w-[70%]">
             متجر سلة يوفر لك كل ما تحتاجه من إلكترونيات او أثات منزلي بالإضافة
             إلي أفضل التخفيضات علي المنتجاتز تسوق الان واستمتع بكل التخفيضات علي
             المنتجات
           </p>
           <Link
-            to="/"
+            to="/products"
             className="text-sm text-white bg-accent-primary py-4 px-10 rounded-sm w-fit mt-4"
           >
             اكتشف المزيد
