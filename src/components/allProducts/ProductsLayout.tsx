@@ -129,7 +129,7 @@ export const ProductsLayout = () => {
   return (
     <div className="@container responsive-padding-y">
       {layoutSystem === "grid" && (
-        <div className="grid grid-cols-2 @md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 @sm:grid-cols-2 @md:grid-cols-2 @lg:grid-cols-3 gap-4">
           {productsState.map((product) => (
             <ProductCard key={product.title} {...product} />
           ))}
