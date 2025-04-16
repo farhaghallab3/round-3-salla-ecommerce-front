@@ -1,4 +1,5 @@
 
+
 import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -12,6 +13,7 @@ const loginSchema = z.object({
   email: z.string().email("ادخل بريد الكتروني صالح"),
   password: z.string().min(8, "كلمة المرور يجب ان تكون على الاقل 8 حروف"),
 });
+
 
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
