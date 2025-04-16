@@ -33,9 +33,9 @@ export default function CategoriesHome() {
       
   return (
     <div>
-        <div className="flex justify-center w-full md:px-10xl mt-5xl">
-            {categories.map((category) => <div className="px-sm w-full md:w-1/3">
-            <div key={category.id} className={`flex-col justify-center items-center text-center px-sm w-full  py-lg
+        <div className="flex max-md:flex-wrap justify-center w-full responsive-padding-x mt-5xl">
+            {categories.map((category) => <div className="px-sm w-full md:w-1/3 max-md:mt-md">
+            <div key={category.id} className={`flex-col rounded-sm justify-center items-center text-center px-sm w-full  py-lg
             ${category.id===1?"bg-surface-shade-a":''}
                 ${category.id===2?"bg-surface-shade-b":''}
                     ${category.id===3?"bg-surface-shade-c":''}

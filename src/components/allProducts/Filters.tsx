@@ -51,7 +51,7 @@ export const Filters = () => {
   };
 
   return (
-    <div className="hidden lg:block md:w-[342px] border border-content-muted">
+    <div className="hidden lg:block md:w-[342px] border border-content-muted my-14">
       <Accordion
         type="multiple"
         dir="rtl"

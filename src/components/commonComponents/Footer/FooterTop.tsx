@@ -7,7 +7,7 @@ import AndroidStore from "@/assets/images/android.png"
 export default function FooterTop() {
   return (
     <div>
-        <div className="flex max-md:flex-wrap md:px-10xl py-md w-full bg-surface-secondary">
+        <div className="flex max-md:flex-wrap responsive-padding-x py-md w-full bg-surface-secondary">
           <div className="flex items-center w-full md:w-3/8 box-border">
             <div className="bg-content-border hover:bg-accent-primary
              rounded-full p-2  transition text-accent-primary hover:text-content-border">
@@ -18,7 +18,7 @@ export default function FooterTop() {
               <p className='text-content-base text-body-small'>انضم الآن واحصل على خصم 10٪ على مشترياتك التالية!</p>
             </div>
           </div>
-          <div className="w-full md:w-3/8  ps-md" >
+          <div className="w-full md:w-3/8  md:ps-md max-md:pt-md" >
             <div className="flex-col justify-center  w-full items-center ">
               <label htmlFor="input" className="text-content-dark font-heading-medium">يمكنك إلغاء الاشتراك في أي لحظة</label>
               <div className="flex pt-3">
@@ -28,7 +28,7 @@ export default function FooterTop() {
               </div>
             </div>
           </div>
-          <div className="flex-col content-center w-full md:w-1/4 ps-lg ">
+          <div className="flex-col content-center w-full md:w-1/4 md:ps-lg max-md:pt-md">
             <h6 className="text-content-dark font-heading-medium"> تطبيقات الجوال</h6>
             <div className="flex gap-lg  pt-sm">
               <img className="w-5/12" src={AppleStore}/>
