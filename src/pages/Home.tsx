@@ -6,6 +6,7 @@ import { SpecialProducts } from "../components/homeComponents/SpecialProducts";
 import CategoriesHome from "@/components/CategoriesHome.tsx/CategoriesHome";
 import BannerBase from "@/components/BannerBestDiscounts/BannerBase";
 import HeroSection from "@/components/homeComponents/HeroSection";
+import VideoSection from "@/components/homeComponents/VideoSection";
 
 export const Home = () => {
   // const api = import.meta.env.VITE_API_BASE_URL;
@@ -21,6 +22,7 @@ export const Home = () => {
       <SlidersSection />
       {/* special products 2 */}
       <SpecialProducts title="منتجات مميزة " />
+      <VideoSection />
       <CategoriesHome />
       <BannerBase />
     </div>
