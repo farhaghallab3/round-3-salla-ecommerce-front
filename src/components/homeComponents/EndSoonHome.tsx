@@ -58,8 +58,11 @@ export default function EndSoonHome() {
                 <p className="text-content-base">تسوق احدث المنتجات المميزة المضافة جديد</p>
             </div>
             <div>
-                <Button className="bg-surface-primary text-accent-primary border
-                border-accent-primary rounded-sm tansition hover:bg-accent-primary hover:text-surface-primary">عرض الكل <ChevronLeft /></Button>
+                <Link to={'/products'}>
+                    <Button className="bg-surface-primary text-accent-primary border
+                    border-accent-primary rounded-sm tansition hover:bg-accent-primary
+                     hover:text-surface-primary">عرض الكل <ChevronLeft /></Button>
+                </Link>
             </div>
         </div>
         <div className="flex max-md:flex-wrap w-full gap-5 pt-xl">
