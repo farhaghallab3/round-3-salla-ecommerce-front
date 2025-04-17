@@ -8,7 +8,6 @@ import { Testimonials } from "@/components/homeComponents/Testimonials";
 import BlogSection from "@/components/homeComponents/BlogSection";
 import BrandSlider from "@/components/homeComponents/brandSlider";
 
-import BannerBase from "@/components/homeComponents/BannerBestDiscounts/BannerBase";
 import EndSoonHome from "@/components/homeComponents/EndSoonHome";
 import NewArrival from "@/components/homeComponents/NewArrival";
 import HeroSection from "@/components/homeComponents/HeroSection";
@@ -35,9 +34,6 @@ export const Home = () => {
       <NewArrival />
       <SpecialProducts title="منتجات مميزة " />
       <VideoSection />
-      <CategoriesHome />
-
-      <BannerBase />
       <Testimonials />
       <BlogSection />
       <BrandSlider />
