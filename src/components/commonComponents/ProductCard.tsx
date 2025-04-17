@@ -24,7 +24,7 @@ export const ProductCard = (Props: ProductCardProps) => {
         </div>
       ) : (
         Props.specialTag === "خصم" && (
-          <div className="absolute top-4 left-4 bg-red-600 text-white py-1 px-2 rounded">
+          <div className="absolute top-4 left-4 bg-surface-badge text-white py-1 px-2 rounded">
             {Props.specialTag}
           </div>
         )
@@ -32,10 +32,10 @@ export const ProductCard = (Props: ProductCardProps) => {
       {/* info */}
       <div className="p-4 flex flex-col gap-1">
         <p className="text-accent-primary text-sm font-regular">ساعات</p>
-        <h3 className="text-content-dark text-medium font-medium min-h-[48px] md:min-h-0">
+        <h3 className="text-content-dark text-medium font-medium min-h-[48px] lg:min-h-0">
           {Props.title}
         </h3>
-        <h3 className="text-content-base text-sm font-regular min-h-[48px]  md:min-h-0">
+        <h3 className="text-content-base text-sm font-regular min-h-[48px]  lg:min-h-0">
           {Props.description}
         </h3>
         <p className="text-large font-medium">

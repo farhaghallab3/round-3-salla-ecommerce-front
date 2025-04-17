@@ -78,7 +78,7 @@ export const Testimonials = () => {
         <p className="text-gray-600 mb-8">يتم استعراض بعض آراء وتجارب المستخدمين</p>
 
         {/* Arrows */}
-        <div className="flex justify-end gap-4 mb-4">
+        <div className="flex justify-end gap-4 mb-4 text-gray-500">
           <button onClick={() => instanceRef.current?.prev()} className="border rounded-full p-2">
             <ChevronRight />
           </button>
@@ -99,7 +99,7 @@ export const Testimonials = () => {
   {renderStars(item.rating)}
 
   
-  <img src="/src/assets/images/quots.png" className="w-10 h-10 opacity-30" alt="quote" />
+  <img src="src/assets/images/quots.png" className="w-10 h-10 opacity-70" alt="quote" />
 </div>
 
 
