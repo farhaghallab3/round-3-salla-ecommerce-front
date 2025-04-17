@@ -7,7 +7,7 @@ import AndroidStore from "@/assets/images/android.png"
 export default function FooterTop() {
   return (
     <div>
-        <div className="flex max-md:flex-wrap responsive-padding-x py-md w-full bg-surface-secondary">
+        <div className="flex max-md:flex-wrap items-end responsive-padding-x py-md w-full bg-surface-secondary">
           <div className="flex items-center w-full md:w-3/8 box-border">
             <div className="bg-content-border hover:bg-accent-primary
              rounded-full p-2  transition text-accent-primary hover:text-content-border">

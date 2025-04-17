@@ -1,15 +1,11 @@
-import * as React from "react"; 
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import {  ChevronLeft } from 'lucide-react';
 import { ProductCard } from '../commonComponents/ProductCard';
 import headPhone from '@/assets/images/Image (7).png';
 import airPods from '@/assets/images/Image (8).png';
 import earPhone from '@/assets/images/Image (9).png';
 import smartWhatch from '@/assets/images/ad-1.png';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
 
 type ProductCardProps = {
   category: string;
@@ -21,8 +17,7 @@ type ProductCardProps = {
   specialTag?: "جديد" | "خصم";
 };
 
-export default function NewArrival() {
-  const [api, setApi] = React.useState<any>(null);
+export default function RelatedProducts() {
   
   const data: ProductCardProps[] = [
     {
@@ -63,58 +58,30 @@ export default function NewArrival() {
     }
   ];
 
-  const scrollPrev = () => {
-    if (api) api.scrollPrev();
-  };
-
-  const scrollNext = () => {
-    if (api) api.scrollNext();
-  };
 
   return (
-    <div className="w-full mt-5xl responsive-padding-x responsive-padding-y bg-surface-secondary">
+    <div className="w-full mt-5xl responsive-padding-y ">
       <div className="flex justify-between">
         <div>
-          <h5 className="text-content-dark">وصل حديثا</h5>
+          <h5 className="text-content-dark">منتجات مشابهة</h5>
           <p className="text-content-base">تسوق احدث المنتجات المميزة المضافة جديد</p>
         </div>
-        <div className='flex'>
-          <button 
-            onClick={scrollNext}
-            className='bg-surface-primary px-3 flex items-center justify-center me-2 text-content-base rounded-full'
-          >
-            <ChevronRight />
-          </button>
-          <button 
-            onClick={scrollPrev}
-            className='bg-surface-primary px-3 flex items-center justify-center text-content-base rounded-full'
-          >
-            <ChevronLeft />
-          </button>
+        <div>
+            <Link to={'/products'}>
+                <Button className="bg-surface-primary text-accent-primary border
+                border-accent-primary rounded-sm tansition hover:bg-accent-primary
+                 hover:text-surface-primary">عرض الكل <ChevronLeft /></Button>
+            </Link>
         </div>
       </div>
       
-      <div className='pt-xl w-full'>
-        <Carousel
-          setApi={setApi}
-          opts={{
-            align: "start",
-            slidesToScroll: 4,
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {data.map((item, index) => (
-              <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/4">
-                <div className='p-1'>
-                  <div className='bg-surface-primary'>
-                    <ProductCard {...item} />
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+      <div className='pt-xl w-full flex max-lg:flex-wrap'>
+        {data.map((item,index)=><div className="w-full md:w-1/2 lg:w-1/4 px-sm">
+            <div className="w-full pt-5" key={index}>
+            <ProductCard key={index} {...item} />
+
+            </div>
+        </div>)}
       </div>
     </div>
   );

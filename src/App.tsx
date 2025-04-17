@@ -33,12 +33,12 @@ function App() {
             path: "register",
             element: <Signup />,
           },
-        ],
-      },
       {
         path: "/productDetails",
         element: <ProductDetails/>,
       },
+        ],
+      }
       
     ],
     { basename: "/round-3-salla-ecommerce-front" }
