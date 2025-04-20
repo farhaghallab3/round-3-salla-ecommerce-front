@@ -1,21 +1,30 @@
 import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "../ui/input";
+import { saveToken, saveUser, signIn } from "@/utils/authFunc";
+import toast from "react-hot-toast";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setToken, setUser } from "@/redux/slices/userSlice";
 
-// Define the schema using zod
 const loginSchema = z.object({
   email: z.string().email("ادخل بريد الكتروني صالح"),
   password: z.string().min(8, "كلمة المرور يجب ان تكون على الاقل 8 حروف"),
 });
 
 export const Login = () => {
+  const navigate = useNavigate();
+  const user = useAppSelector((state) => state.user.user);
+  if (localStorage.getItem("token") || user.id) {
+    navigate("/");
+  }
+
+  const dispatch = useAppDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
-  // Initialize react-hook-form with zod schema
   const {
     register,
     handleSubmit,
@@ -26,10 +35,24 @@ export const Login = () => {
 
   type FormData = z.infer<typeof loginSchema>;
 
-  const handleLogin = (data: FormData) => {
-    console.log(data);
-    console.log("Email:", data.email);
-    console.log("Password:", data.password);
+  const handleLogin = async (data: FormData) => {
+    try {
+      const response = await signIn(data.email, data.password);
+
+      if (!response?.data?.token) {
+        toast.error("بيانات الدخول غير صحيحة");
+        return;
+      }
+
+      dispatch(setToken(response.data.token));
+      dispatch(setUser(response.data.user));
+      toast.success("تم تسجيل الدخول بنجاح");
+      saveToken(response.data.token.access_token);
+      saveUser(response.data.user);
+    } catch (error) {
+      toast.error("حدث خطأ اثناء انشاء الحساب");
+      console.error(error);
+    }
   };
 
   return (
