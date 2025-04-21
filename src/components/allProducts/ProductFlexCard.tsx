@@ -1,16 +1,9 @@
+import { IProduct } from "@/types/product";
 import { Heart, ShoppingCart, Star } from "lucide-react";
+import smartWatch from "../../assets/images/Image (6).png";
+import { calculateDiscountedPrice } from "@/utils/prodFunctions";
 
-type ProductCardProps = {
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  specialTag?: "جديد" | "خصم";
-  oldPrice?: number;
-  rating?: number;
-};
-
-export const ProductFlexCard = (Props: ProductCardProps) => {
+export const ProductFlexCard = (Props: IProduct) => {
   const renderStars = (rating: number) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -30,19 +23,27 @@ export const ProductFlexCard = (Props: ProductCardProps) => {
   return (
     <div className="relative flex flex-row border rounded border-content-muted hover:border-accent-primary">
       <div className="relative w-full max-w-[150px] xl:max-w-[240px]">
-        <img
-          src={Props.image}
-          alt={Props.title}
-          className="w-full h-full object-cover"
-        />
-        {Props.specialTag === "جديد" ? (
+        {Props.images[0] ? (
+          <img
+            src={Props.images[0].image}
+            alt={Props.name}
+            className="w-full max-h-[300px] object-cover"
+          />
+        ) : (
+          <img
+            src={smartWatch}
+            alt=""
+            className="w-full max-h-[300px] object-cover"
+          />
+        )}
+        {Props.has_variants ? (
           <div className="absolute top-4 left-4 bg-accent-primary text-white py-1 px-2 rounded">
-            {Props.specialTag}
+            متعدد
           </div>
         ) : (
-          Props.specialTag === "خصم" && (
+          Props.has_discount && (
             <div className="absolute top-4 left-4 bg-red-600 text-white py-1 px-2 rounded">
-              {Props.specialTag}
+              خصم {Props.discount}%
             </div>
           )
         )}
@@ -51,28 +52,28 @@ export const ProductFlexCard = (Props: ProductCardProps) => {
       {/* special tag */}
 
       {/* info */}
-      <div className="p-4 flex flex-col gap-1 w-full">
+      <div className="p-4 flex flex-col gap-1 w-full justify-between">
         <p className="text-accent-primary text-sm font-regular">ساعات</p>
         <h3 className="text-content-dark text-medium font-medium">
-          {Props.title}
+          {Props.name}
         </h3>
         <h3 className="text-content-base text-sm font-regular">
           {Props.description}
         </h3>
         {/* rating */}
-        {Props.rating && (
+        {Props.reviews_average && (
           <div className="flex items-center gap-1">
-            {renderStars(Props.rating)}
+            {renderStars(Props.reviews_average)}
             <span className="text-content-dim text-sm">
-              ({Props.rating.toFixed(1)})
+              ({Props.reviews_count})
             </span>
           </div>
         )}
         <p className="text-large font-medium">
           {Props.price} رس{" "}
-          {Props.oldPrice && (
+          {Props.has_discount && (
             <span className="text-content-dim text-sm line-through ms-2">
-              {Props.oldPrice} رس
+              {calculateDiscountedPrice(Props.price, Props.discount)} رس
             </span>
           )}
         </p>
