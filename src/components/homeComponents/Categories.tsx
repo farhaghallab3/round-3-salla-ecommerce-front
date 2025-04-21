@@ -7,8 +7,20 @@ import imageThree from "@/assets/images/Image (18).png"
 import imageFour from "@/assets/images/Image (19).png"
 import imageFive from "@/assets/images/Image (20).png"
 import imageSix from "@/assets/images/Image (21).png"
+import { useGetQuery } from '@/api/useGetQuery';
 
 export default function Categories() {
+    //get the data from api using custom hook useGetQuery
+  const { data: categories = [], isLoading, isError, error } = useGetQuery('categories', '/categories');
+  //handel loading & error states
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error?.message}</div>;
+  }
+  console.log(categories.data)
     const data =[{
         id:1,
         image:imageOne,

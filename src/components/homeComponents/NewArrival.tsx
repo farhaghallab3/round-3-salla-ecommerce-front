@@ -10,6 +10,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { useGetQuery } from "@/api/useGetQuery";
 
 type ProductCardProps = {
   category: string;
@@ -23,8 +24,19 @@ type ProductCardProps = {
 
 export default function NewArrival() {
   const [api, setApi] = React.useState<any>(null);
+  //get the data from api using custom hook useGetQuery
+    const { data: products = [], isLoading, isError, error } = useGetQuery('products', '/products');
   
-  const data: ProductCardProps[] = [
+    console.log("products",products.data)
+  //handel loading & error states
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error?.message}</div>;
+  }
+    const data: ProductCardProps[] = [
     {
       category: "ساعات",
       title: "ساعة ذكية جديدة من سلسلة 8",
@@ -50,6 +62,78 @@ export default function NewArrival() {
       price: 250.00,
       oldPrice: 350.00,
       image: earPhone,
+      specialTag: "خصم"
+    },
+    {
+      category: "ساعات",
+      title: "ساعة ذكية جديدة من سلسلة 8",
+      description: "سوار رياضي اسود - عادي.",
+      price: 250.00,
+      oldPrice: 350.00,
+      image: smartWhatch,
+      specialTag: "خصم"
+    },
+    {
+      category: "ساعات",
+      title: "ساعة ذكية جديدة من سلسلة 8",
+      description: "سوار رياضي اسود - عادي.",
+      price: 250.00,
+      oldPrice: 350.00,
+      image: smartWhatch,
+      specialTag: "خصم"
+    },
+    {
+      category: "ساعات",
+      title: "ساعة ذكية جديدة من سلسلة 8",
+      description: "سوار رياضي اسود - عادي.",
+      price: 250.00,
+      oldPrice: 350.00,
+      image: smartWhatch,
+      specialTag: "خصم"
+    },
+    {
+      category: "ساعات",
+      title: "ساعة ذكية جديدة من سلسلة 8",
+      description: "سوار رياضي اسود - عادي.",
+      price: 250.00,
+      oldPrice: 350.00,
+      image: smartWhatch,
+      specialTag: "خصم"
+    },
+    {
+      category: "ساعات",
+      title: "ساعة ذكية جديدة من سلسلة 8",
+      description: "سوار رياضي اسود - عادي.",
+      price: 250.00,
+      oldPrice: 350.00,
+      image: smartWhatch,
+      specialTag: "خصم"
+    },
+    {
+      category: "ساعات",
+      title: "ساعة ذكية جديدة من سلسلة 8",
+      description: "سوار رياضي اسود - عادي.",
+      price: 250.00,
+      oldPrice: 350.00,
+      image: smartWhatch,
+      specialTag: "خصم"
+    },
+    {
+      category: "ساعات",
+      title: "ساعة ذكية جديدة من سلسلة 8",
+      description: "سوار رياضي اسود - عادي.",
+      price: 250.00,
+      oldPrice: 350.00,
+      image: smartWhatch,
+      specialTag: "خصم"
+    },
+    {
+      category: "ساعات",
+      title: "ساعة ذكية جديدة من سلسلة 8",
+      description: "سوار رياضي اسود - عادي.",
+      price: 250.00,
+      oldPrice: 350.00,
+      image: smartWhatch,
       specialTag: "خصم"
     },
     {
@@ -119,3 +203,4 @@ export default function NewArrival() {
     </div>
   );
 }
+
