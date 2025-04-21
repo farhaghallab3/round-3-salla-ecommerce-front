@@ -1,6 +1,7 @@
 import ProductBrands from "./ProductBrands";
 import { ProductDetailsTabs } from "./ProductDetailsTabs";
 import RelatedProducts from "./RelatedProducts";
+import ProductDetailsUpper from "./upper";
 
 export default function ProductDetails() {
   return (
