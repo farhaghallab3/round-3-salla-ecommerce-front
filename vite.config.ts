@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       "@server": path.resolve(__dirname, "../server/src"),
+      "@assets": path.resolve(__dirname, "./src/assets"),
     },
   },
   plugins: [react(), tailwindcss()],

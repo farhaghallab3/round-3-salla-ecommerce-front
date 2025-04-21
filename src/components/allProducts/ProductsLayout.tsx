@@ -2,9 +2,9 @@ import { useAppSelector } from "@/redux/hooks";
 import { ProductCard } from "../commonComponents/ProductCard";
 import { ProductFlexCard } from "./ProductFlexCard";
 import { useEffect, useState } from "react";
-import noCart from "@/assets/icons/noCartIcon.svg";
-import { useGetQuery } from "@/api/useGetQuery";
-import { IProduct } from "@/types/product";
+
+import noCart from "@/assets/icons/noCartIcon.png";
+
 
 // type ProductCardProps = {
 //   title: string;
