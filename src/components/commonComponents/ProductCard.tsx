@@ -1,48 +1,51 @@
+import { IProduct } from "@/types/product";
 import { Heart, ShoppingCart } from "lucide-react";
+import smartWatch from "../../assets/images/Image (6).png";
+import { calculateDiscountedPrice } from "@/utils/prodFunctions";
 
-type ProductCardProps = {
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  specialTag?: "جديد" | "خصم";
-  oldPrice?: number;
-};
-
-export const ProductCard = (Props: ProductCardProps) => {
+export const ProductCard = (Props: IProduct) => {
   return (
     <div className="relative flex flex-col border rounded border-content-muted hover:border-accent-primary ">
-      <img
-        src={Props.image}
-        alt={Props.title}
-        className="w-full h-[228px] object-cover"
-      />
+      {Props.images[0] ? (
+        <img
+          src={Props.images[0].image}
+          alt={Props.name}
+          className="w-full h-[228px] object-contain"
+        />
+      ) : (
+        <img
+          src={smartWatch}
+          alt=""
+          className="w-full h-[228px] object-contain"
+        />
+      )}
       {/* special tag */}
-      {Props.specialTag === "جديد" ? (
+      {Props.has_variants ? (
         <div className="absolute top-4 left-4 bg-accent-primary text-white py-1 px-2 rounded">
-          {Props.specialTag}
+          متعدد
         </div>
       ) : (
-        Props.specialTag === "خصم" && (
-          <div className="absolute top-4 left-4 bg-red-600 text-white py-1 px-2 rounded">
-            {Props.specialTag}
+        Props.has_discount && (
+          <div className="absolute top-4 left-4 bg-surface-badge text-white py-1 px-2 rounded">
+            خصم {Props.discount}%
           </div>
         )
       )}
       {/* info */}
       <div className="p-4 flex flex-col gap-1">
         <p className="text-accent-primary text-sm font-regular">ساعات</p>
-        <h3 className="text-content-dark text-medium font-medium min-h-[48px] md:min-h-0">
-          {Props.title}
+        <h3 className="text-content-dark text-medium font-medium min-h-[48px] lg:min-h-0">
+          {Props.name}
         </h3>
-        <h3 className="text-content-base text-sm font-regular min-h-[48px]  md:min-h-0">
+        <h3 className="text-content-base text-sm font-regular min-h-[48px]  lg:min-h-0">
           {Props.description}
         </h3>
         <p className="text-large font-medium">
           {Props.price} رس{" "}
-          {Props.oldPrice && (
+          {Props.has_discount && (
             <span className="text-content-dim text-sm line-through ms-2">
-              {Props.oldPrice} رس
+              {calculateDiscountedPrice(Props.price, Props.discount)}
+              رس
             </span>
           )}
         </p>

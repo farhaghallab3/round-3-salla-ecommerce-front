@@ -139,7 +139,7 @@ export const FiltersMobile = ({ setShowFilters, showFilters }: Props) => {
       {/* close button */}
       {showFilters && (
         <button
-          className="fixed top-3.5 right-[342px] size-9 bg-surface-badge text-white flex items-center justify-center rounded-tl-full rounded-bl-full z-50"
+          className="fixed top-3.5 right-[342px] size-9 bg-surface-badge text-white flex items-center justify-center rounded-tl-full rounded-bl-full z-50 "
           onClick={() => setShowFilters(false)}
         >
           <X className="w-6 h-6" />

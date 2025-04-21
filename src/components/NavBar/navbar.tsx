@@ -1,5 +1,9 @@
+
 import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+
+
 import {
   ShoppingCart,
   User,
@@ -8,12 +12,14 @@ import {
   Mail,
   Search,
   Menu,
+
   ChevronUp,
 } from 'lucide-react';
 import axios from 'axios';
 import LOGO from '@assets/images/salla.png';
 import UserDrawer from './UserDrawer';
 import MobileMenu from './MobileMenu';
+
 
 
 const HeaderNavbar: FC = () => {
@@ -62,10 +68,12 @@ const HeaderNavbar: FC = () => {
   }, []);
 
   return (
+
     <div className="w-full overflow-x-hidden max-w-[100vw] ">
       <header className="w-full border-b text-sm font-light ">
         {/* ✅ Top Bar */}
         <div className="hidden lg:flex justify-between items-center px-4 py-2 bg-gray-100 text-gray-600 sm:px-6 lg:px-52 font-sans">
+
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
               <Phone size={14} className="text-[#21c2ac]" />
@@ -88,6 +96,7 @@ const HeaderNavbar: FC = () => {
 
         {/* ✅ Mobile Top Bar */}
         <div className="lg:hidden px-2 py-2 flex justify-between items-center bg-gray-100 text-gray-600 text-xs">
+
           <div className="flex items-center gap-2">
             <Mail size={14} className="text-[#21c2ac]" />
             Support@salla.sa
@@ -163,6 +172,7 @@ const HeaderNavbar: FC = () => {
           <div>
             <div className="text-gray-400">
               <Link to="/">سلة المشتريات </Link>
+
             </div>
             <div className="font-semibold text-gray-700">1,200 رس</div>
           </div>
@@ -239,6 +249,7 @@ const HeaderNavbar: FC = () => {
 
         {/* ✅ Bottom Navigation */}
         <nav className="hidden lg:flex bg-black text-white px-4 py-2 gap-6 justify-center text-sm">
+
       {bottomLinks.map(({ label, to }, idx) => (
         <Link
           key={idx}
@@ -250,6 +261,7 @@ const HeaderNavbar: FC = () => {
         </Link>
       ))}
     </nav>
+
       </header>
 
       <UserDrawer

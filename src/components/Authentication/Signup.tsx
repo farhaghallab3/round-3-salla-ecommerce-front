@@ -1,10 +1,13 @@
 import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "../ui/input";
+import { signUp } from "@/utils/authFunc";
+import toast from "react-hot-toast";
+import { useAppSelector } from "@/redux/hooks";
 
 const registerSchema = z
   .object({
@@ -24,6 +27,13 @@ const registerSchema = z
   });
 
 export const Signup = () => {
+  const navigate = useNavigate();
+  const user = useAppSelector((state) => state.user.user);
+
+  if (user.id) {
+    navigate("/");
+  }
+
   const {
     register,
     handleSubmit,
@@ -35,9 +45,20 @@ export const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   type FormData = z.infer<typeof registerSchema>;
 
-  const handleRegister = (data: FormData) => {
-    if (data.password !== data.confirmPassword) {
-      // set form error message
+  const handleRegister = async (data: FormData) => {
+    try {
+      const response = await signUp(
+        data.name,
+        data.email,
+        data.password,
+        data.confirmPassword
+      );
+      console.log(response);
+      toast.success("تم انشاء الحساب بنجاح");
+      navigate("/signin");
+    } catch (error) {
+      toast.error("حدث خطأ اثناء انشاء الحساب");
+      console.error(error);
     }
   };
 
