@@ -2,82 +2,100 @@
 import { ArrowLeft } from "lucide-react";
 import { ProductCard } from "../commonComponents/ProductCard";
 import { Link } from "react-router-dom";
+import { useGetQuery } from "@/api/useGetQuery";
+import { IProduct } from "@/types/product";
 
-type ProductCardProps = {
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  specialTag?: "جديد" | "خصم";
-  oldPrice?: number;
-};
-const products: ProductCardProps[] = [
-  {
-    title: "ساعة ذكية جديدة من سلسلة 8",
-    description: "سوار رياضي اسود - عادي",
-    price: 250,
-    image: "https://placehold.co/600x400",
-    specialTag: "جديد",
-  },
-  {
-    title: "سماعات بلوتوث لاسلكية",
-    description: "جودة صوت عالية وتقنية عزل الضوضاء",
-    price: 150,
-    image: "https://placehold.co/600x400",
-    specialTag: "خصم",
-    oldPrice: 200,
-  },
-  {
-    title: "باور بانك 20000mAh",
-    description: "شحن سريع بتقنية PD",
-    price: 120,
-    image: "https://placehold.co/600x400",
-    specialTag: "جديد",
-  },
-  {
-    title: "كيبورد ميكانيكي للألعاب",
-    description: "إضاءة RGB ومفاتيح زرقاء",
-    price: 320,
-    image: "https://placehold.co/600x400",
-    specialTag: "خصم",
-    oldPrice: 450,
-  },
-  {
-    title: "لابتوب للأعمال",
-    description: "رام 16GB - SSD 512GB",
-    price: 320,
-    image: "https://placehold.co/600x400",
-    oldPrice: 450,
-    specialTag: "خصم",
-  },
-  {
-    title: "هاتف ذكي بشاشة 6.5 إنش",
-    description: "ذاكرة داخلية 128GB - كاميرا 64MP",
-    price: 2200,
-    image: "https://placehold.co/600x400",
-    specialTag: "جديد",
-  },
-  {
-    title: "تابلت تعليمي للأطفال",
-    description: "مع برامج تعليمية وألعاب مفيدة",
-    price: 490,
-    image: "https://placehold.co/600x400",
-    specialTag: "جديد",
-  },
-  {
-    title: "ماوس لاسلكي مريح",
-    description: "تصميم مريح للاستخدام الطويل",
-    price: 90,
-    image: "https://placehold.co/600x400",
-    specialTag: "جديد",
-  },
-];
+// type ProductCardProps = {
+//   title: string;
+//   description: string;
+//   price: number;
+//   image: string;
+//   specialTag?: "جديد" | "خصم";
+//   oldPrice?: number;
+// };
+// const products: ProductCardProps[] = [
+//   {
+//     title: "ساعة ذكية جديدة من سلسلة 8",
+//     description: "سوار رياضي اسود - عادي",
+//     price: 250,
+//     image: "https://placehold.co/600x400",
+//     specialTag: "جديد",
+//   },
+//   {
+//     title: "سماعات بلوتوث لاسلكية",
+//     description: "جودة صوت عالية وتقنية عزل الضوضاء",
+//     price: 150,
+//     image: "https://placehold.co/600x400",
+//     specialTag: "خصم",
+//     oldPrice: 200,
+//   },
+//   {
+//     title: "باور بانك 20000mAh",
+//     description: "شحن سريع بتقنية PD",
+//     price: 120,
+//     image: "https://placehold.co/600x400",
+//     specialTag: "جديد",
+//   },
+//   {
+//     title: "كيبورد ميكانيكي للألعاب",
+//     description: "إضاءة RGB ومفاتيح زرقاء",
+//     price: 320,
+//     image: "https://placehold.co/600x400",
+//     specialTag: "خصم",
+//     oldPrice: 450,
+//   },
+//   {
+//     title: "لابتوب للأعمال",
+//     description: "رام 16GB - SSD 512GB",
+//     price: 320,
+//     image: "https://placehold.co/600x400",
+//     oldPrice: 450,
+//     specialTag: "خصم",
+//   },
+//   {
+//     title: "هاتف ذكي بشاشة 6.5 إنش",
+//     description: "ذاكرة داخلية 128GB - كاميرا 64MP",
+//     price: 2200,
+//     image: "https://placehold.co/600x400",
+//     specialTag: "جديد",
+//   },
+//   {
+//     title: "تابلت تعليمي للأطفال",
+//     description: "مع برامج تعليمية وألعاب مفيدة",
+//     price: 490,
+//     image: "https://placehold.co/600x400",
+//     specialTag: "جديد",
+//   },
+//   {
+//     title: "ماوس لاسلكي مريح",
+//     description: "تصميم مريح للاستخدام الطويل",
+//     price: 90,
+//     image: "https://placehold.co/600x400",
+//     specialTag: "جديد",
+//   },
+// ];
 
 type Props = {
   title: string;
 };
 
 export const SpecialProducts = (Props: Props) => {
+  const {
+    data: productsResponse = [],
+    isLoading,
+    isError,
+    error,
+  } = useGetQuery("products", "/products");
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error?.message}</div>;
+  }
+
+  const products: IProduct[] = productsResponse.data ?? [];
   return (
     <div className="responsive-padding-x responsive-margin-y mx-auto">
       {/* header */}
@@ -100,8 +118,8 @@ export const SpecialProducts = (Props: Props) => {
       </div>
       {/* products grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center mt-12">
-        {products.map((product, index) => (
-          <ProductCard key={index} {...product} />
+        {products.map((product) => (
+          <ProductCard key={product.id2} {...product} />
         ))}
       </div>
     </div>
