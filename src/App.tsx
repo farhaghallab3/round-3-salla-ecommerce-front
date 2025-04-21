@@ -1,15 +1,18 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter,  RouterProvider } from "react-router-dom";
 import { Layout } from "./pages/Layout";
-import { Home } from "./pages/Home";
+//import { Home } from "./pages/Home";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { Products } from "./pages/Products";
 
-import ProductDetails from "./components/ProductDetails/ProductDetails";
+import ProductDetails from "./components/ProductDetails/upper";
 import { Login } from "./components/Authentication/Login";
 import { Signup } from "./components/Authentication/Signup";
+import { Home } from "./pages/Home";
+import ProductDetailsUpper from "./components/ProductDetails/upper";
+
 
 
 function App() {
@@ -33,12 +36,18 @@ function App() {
             path: "register",
             element: <Signup />,
           },
+          {
+            path: "/upper",
+            element: <ProductDetailsUpper/>,
+          },
         ],
       },
+     
       {
-        path: "/productDetails",
-        element: <ProductDetails/>,
+        path: "/products/:id",
+        element: <ProductDetails />,
       },
+     
       
     ],
     { basename: "/round-3-salla-ecommerce-front" }

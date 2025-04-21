@@ -3,6 +3,7 @@ import Footer from "../components/commonComponents/Footer/Footer";
 import HeaderNavbar from "../components/NavBar/navbar";
 
 
+
 export const Layout = () => {
   return (
     <div>

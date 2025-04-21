@@ -5,7 +5,6 @@ import { LapBanner } from "../components/homeComponents/LapBanner";
 import SlidersSection from "../components/homeComponents/SlidersSection";
 import { SpecialProducts } from "../components/homeComponents/SpecialProducts";
 
-import BannerBase from "@/components/BannerBestDiscounts/BannerBase";
 import { Testimonials } from "@/components/homeComponents/Testimonials";
 import BlogSection from "@/components/homeComponents/BlogSection";
 import BrandSlider from "@/components/homeComponents/brandSlider";

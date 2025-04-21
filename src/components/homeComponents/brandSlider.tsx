@@ -1,13 +1,18 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import logoj from "@/assets/images/joyroom.png";
+import logop from "@/assets/images/oppo.png";
+import logs from "@/assets/images/samsung.png";
 
 const brands = [
-  { name: "JOYROOM", logo: "src/assets/images/joyroom.png" },
-  { name: "JOYROOM", logo: "src/assets/images/joyroom.png" },
-  { name: "OPPO", logo: "src/assets/images/oppo.png" },
-  { name: "SAMSUNG", logo: "src/assets/images/samsung.png" },
-  { name: "OPPO", logo: "src/assets/images/oppo.png" },
+  { name: "JOYROOM", logo: logoj },
+  { name: "JOYROOM", logo: logoj },
+  { name: "OPPO", logo: logop },
+  { name: "SAMSUNG", logo: logs },
+  { name: "OPPO", logo: logop},
+  { name: "SAMSUNG", logo: logs },
+  { name: "OPPO", logo: logop },
 ];
 
 export const BrandSlider = () => {
