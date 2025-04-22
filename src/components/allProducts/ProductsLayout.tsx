@@ -4,6 +4,8 @@ import { ProductFlexCard } from "./ProductFlexCard";
 import { useEffect, useState } from "react";
 
 import noCart from "@/assets/icons/noCartIcon.png";
+import { useGetQuery } from "@/api/useGetQuery";
+import { IProduct } from "@/types/product";
 
 
 // type ProductCardProps = {
