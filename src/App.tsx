@@ -9,7 +9,7 @@ import ProductDetails from "./components/ProductDetails/ProductDetails";
 import { Login } from "./components/Authentication/Login";
 import { Signup } from "./components/Authentication/Signup";
 
-import ProductDetailsUpper from "./components/ProductDetails/upper";
+
 
 import { Toaster } from "react-hot-toast";
 import { useAppDispatch } from "./redux/hooks";
@@ -43,7 +43,6 @@ function App() {
           { path: "signin", element: <Login /> },
           { path: "register", element: <Signup /> },
           { path: "products", element: <Products /> },
-          { path: "upper", element: <ProductDetailsUpper /> },
           {
             path: "productDetails",
             element: (
