@@ -2,10 +2,30 @@ import { IProduct } from "@/types/product";
 import { Heart, ShoppingCart } from "lucide-react";
 import smartWatch from "../../assets/images/Image (6).png";
 import { calculateDiscountedPrice } from "@/utils/prodFunctions";
+import { Link } from "react-router-dom";
 
 export const ProductCard = (Props: IProduct) => {
+  // add to cart
+  const addToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // make the butto not transfer between pages
+    e.stopPropagation();
+    console.log("add to cart");
+  };
+
+  // add to wishlist
+  const addToWishlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // make the butto not transfer between pages
+    e.stopPropagation();
+    console.log("add to wishlist");
+  };
+
   return (
-    <div className="relative flex flex-col border rounded border-content-muted hover:border-accent-primary ">
+    <Link
+      to={`/productDetails/${Props.id2}`}
+      className="relative flex flex-col border rounded border-content-muted hover:border-accent-primary "
+    >
       {Props.images[0] ? (
         <img
           src={Props.images[0].image}
@@ -52,11 +72,17 @@ export const ProductCard = (Props: IProduct) => {
 
         {/* buttons */}
         <div className="flex gap-2 mt-2">
-          <button className="w-full tansition py-3 flex items-center justify-center gap-2 text-medium text-content-dark border rounded border-content-muted hover:bg-button-primary hover:text-white">
+          <button
+            className="w-full tansition py-3 flex items-center justify-center gap-2 text-medium text-content-dark border rounded border-content-muted hover:bg-button-primary hover:text-white"
+            onClick={addToCart}
+          >
             <ShoppingCart size={16} className="hidden lg:block" />
             اضف للسلة
           </button>
-          <button className="group py-3 flex items-center justify-center border rounded border-content-muted px-4 text-content-dim tansition">
+          <button
+            className="group py-3 flex items-center justify-center border rounded border-content-muted px-4 text-content-dim tansition"
+            onClick={addToWishlist}
+          >
             <Heart
               size={16}
               className="fill-transparent group-hover:fill-button-tertiary"
@@ -64,6 +90,6 @@ export const ProductCard = (Props: IProduct) => {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

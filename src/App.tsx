@@ -9,8 +9,6 @@ import ProductDetails from "./components/ProductDetails/ProductDetails";
 import { Login } from "./components/Authentication/Login";
 import { Signup } from "./components/Authentication/Signup";
 
-
-
 import { Toaster } from "react-hot-toast";
 import { useAppDispatch } from "./redux/hooks";
 import { useEffect } from "react";
@@ -44,7 +42,7 @@ function App() {
           { path: "register", element: <Signup /> },
           { path: "products", element: <Products /> },
           {
-            path: "productDetails",
+            path: "productDetails/:id",
             element: (
               <PrivateRoute>
                 <ProductDetails />
