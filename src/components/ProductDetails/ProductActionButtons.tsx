@@ -33,12 +33,24 @@ const ActionButtons = ({ product }: ActionButtonsProps) => {
   };
 
   const handleAddToCart = () => {
-    const existingCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    const existingCartItems: ProductProps[] = JSON.parse(localStorage.getItem('cartItems') || '[]');
 
-    const updatedCartItems = [...existingCartItems, { ...product, quantity: 1 }];
+    const isAlreadyInCart = existingCartItems.find(item => item.id === product.id);
+
+    if (isAlreadyInCart) {
+      toast.error("المنتج موجود بالفعل في السلة 🛒");
+      return;
+    }
+
+    const updatedCartItems = [
+      ...existingCartItems,
+      { ...product, quantity: 1 },
+    ];
 
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    toast.success("تمت إضافة المنتج للسلة بنجاح ✅");
 
+    
     navigate('/checkout', {
       state: { productId: product.id },
     });

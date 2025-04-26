@@ -1,8 +1,7 @@
 import photophones from '@assets/images/ad-2.png'
 import { Clock, Calendar, Check } from 'lucide-react';
 import { useState, useRef } from "react";
-import ActionButtons from './ProductActionButtons';
-import ad from '@assets/images/ad-2.png'
+
 
 
 
@@ -154,14 +153,7 @@ const ProductCustomization = () => {
 
       </div>
 
-      <ActionButtons
-  product={{
-    id: 1,
-    name: "موبايل آيفون",
-    price: 3000,
-    image: ad,
-  }}
-/>
+ 
   
       </div>
 
