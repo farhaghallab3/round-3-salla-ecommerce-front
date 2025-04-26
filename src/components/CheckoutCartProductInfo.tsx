@@ -1,6 +1,6 @@
 interface Props {
   productName: string;
-  productPrice: number;
+  productPrice?: number; 
 }
 
 function CheckoutCartProductInfo({ productName, productPrice }: Props) {
@@ -10,7 +10,7 @@ function CheckoutCartProductInfo({ productName, productPrice }: Props) {
         {productName}
       </h4>
       <p className="w-fit font-body-regular text-body-small md:text-body-base text-content-base">
-        {productPrice.toFixed(2)} ر.س
+        {productPrice !== undefined ? `${productPrice.toFixed(2)} ر.س` : 'غير متوفر'}
       </p>
     </div>
   );

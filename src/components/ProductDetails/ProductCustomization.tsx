@@ -2,6 +2,7 @@ import photophones from '@assets/images/ad-2.png'
 import { Clock, Calendar, Check } from 'lucide-react';
 import { useState, useRef } from "react";
 import ActionButtons from './ProductActionButtons';
+import ad from '@assets/images/ad-2.png'
 
 
 
@@ -28,7 +29,7 @@ const ProductCustomization = () => {
   return (
     <div className="container mx-auto text-right px-4">
       <div className="mt-6 space-y-6 text-right">
-        {/* صور المنتج */}
+      
         <div>
           <h3 className="font-bold mb-4 text-xl text-gray-600">صور المنتج</h3>
           <div className="flex gap-3 overflow-x-auto">
@@ -45,7 +46,7 @@ const ProductCustomization = () => {
           </div>
         </div>
 
-        {/* الألوان */}
+      
         <div className="space-y-4 mt-8">
           <h3 className="font-bold text-xl text-gray-700">الألوان المتاحة</h3>
           <div className="flex items-center gap-[70px] flex-wrap">
@@ -81,7 +82,7 @@ const ProductCustomization = () => {
           </div>
         </div>
 
-        {/* الملاحظات */}
+       
         <div className="space-y-2 mt-8">
           <h3 className="font-bold text-xl mb-1 text-gray-600">اضف ملاحظاتك</h3>
           <div className="relative mt-2 text-sm">
@@ -94,7 +95,7 @@ const ProductCustomization = () => {
           </div>
         </div>
 
-        {/* التاريخ والوقت */}
+      
         <div className="space-y-2 mt-8">
           <h3 className="font-bold text-xl mb-1 text-gray-600">تاريخ التوصيل</h3>
           <div className="relative mt-2 text-sm">
@@ -154,12 +155,16 @@ const ProductCustomization = () => {
       </div>
 
       <ActionButtons
-        selectedDate={selectedDate}
-        selectedTime={selectedTime}
-        notes={notes}
-        selectedColor={selectedColor}
-      />
-    </div>
+  product={{
+    id: 1,
+    name: "موبايل آيفون",
+    price: 3000,
+    image: ad,
+  }}
+/>
+  
+      </div>
+
   );
 };
 

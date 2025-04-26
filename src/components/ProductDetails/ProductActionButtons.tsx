@@ -1,54 +1,48 @@
 "use client";
 
 import { ShoppingCart } from "lucide-react";
-import { useNavigate } from 'react-router-dom'; 
-import { toast } from "react-hot-toast"; 
-import axios from "axios"; 
-import photophones from '@assets/images/ad-2.png'
+import { useNavigate } from 'react-router-dom';
+import { toast } from "react-hot-toast";
+import axios from "axios";
 
+interface ProductProps {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  quantity?: number;
+}
 
-const product = {
-  name: "هاتف سامسونج",
-  price: 1000,
-  image: photophones,
-};
+interface ActionButtonsProps {
+  product: ProductProps;
+}
 
+const ActionButtons = ({ product }: ActionButtonsProps) => {
+  const navigate = useNavigate();
 
-const handleFastBuy = async () => {
-  try {
-    await axios.post('https://salla.digital-vision-solutions.com/api/carts', {
-      productName: product.name,
-      
-    });
-    toast.success("تم الشراء بنجاح ✅");
-  } catch (error) {
-    toast.error("حدث خطأ أثناء الشراء ❌");
-    console.error(error);
-  }
-};
-
-const ActionButtons = () => {
-  const navigate = useNavigate(); 
-
+  const handleFastBuy = async () => {
+    try {
+      await axios.post('https://salla.digital-vision-solutions.com/api/carts', {
+        productName: product.name,
+      });
+      toast.success("تم الشراء بنجاح ✅");
+    } catch (error) {
+      toast.error("حدث خطأ أثناء الشراء ❌");
+      console.error(error);
+    }
+  };
 
   const handleAddToCart = () => {
     const existingCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-  
-    const newCartItem = {
-      id: Date.now(), // أو ID من المنتج لو عندك
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      quantity: 1, // تقدر تخليه ديناميكي لاحقًا
-    };
-  
-    const updatedCartItems = [...existingCartItems, newCartItem];
-  
+
+    const updatedCartItems = [...existingCartItems, { ...product, quantity: 1 }];
+
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-  
-    navigate('/Checkout');
+
+    navigate('/checkout', {
+      state: { productId: product.id },
+    });
   };
-  
 
   return (
     <div className="flex flex-col md:flex-row gap-2 pt-2">
