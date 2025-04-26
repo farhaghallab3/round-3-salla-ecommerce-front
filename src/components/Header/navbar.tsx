@@ -171,7 +171,7 @@ const HeaderNavbar: FC = () => {
           <ShoppingCart size={20} className="text-gray-500 rounded-full h-6 w-6 bg-gray-100" />
           <div>
             <div className="text-gray-400">
-              <Link to="/">سلة المشتريات </Link>
+              <Link to="/Checkout">سلة المشتريات </Link>
 
             </div>
             <div className="font-semibold text-gray-700">1,200 رس</div>
@@ -236,7 +236,7 @@ const HeaderNavbar: FC = () => {
       <ShoppingCart size={20} className="text-gray-500 rounded-full h-6 w-6 bg-gray-100" />
       <div>
         <div className="text-gray-400">
-          <Link to="/">سلة المشتريات </Link>
+          <Link to="/Checkout">سلة المشتريات </Link>
         </div>
         <div className="font-semibold text-gray-700">1,200 رس</div>
       </div>

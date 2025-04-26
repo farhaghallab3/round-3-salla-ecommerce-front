@@ -14,6 +14,7 @@ import { useAppDispatch } from "./redux/hooks";
 import { useEffect } from "react";
 import { setToken, setUser } from "./redux/slices/userSlice";
 import PrivateRoute from "./components/Authentication/PrivateRoute";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -41,7 +42,7 @@ function App() {
           { path: "signin", element: <Login /> },
           { path: "register", element: <Signup /> },
           { path: "products", element: <Products /> },
-          {path: "products/ProductDetails/:id",
+          {path: "ProductDetails/:id",
 
             element: (
               <PrivateRoute>
@@ -49,6 +50,7 @@ function App() {
               </PrivateRoute>
             ),
           },
+          { path: "checkout", element: <Checkout /> },
         ],
       },
     ],

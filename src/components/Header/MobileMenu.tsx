@@ -79,12 +79,12 @@ const MobileMenu: FC<Props> = ({ setShowFilters, showFilters }) => {
                     {openSection === 'electronics' && (
                       <ul className="pr-4 mt-4 space-y-2 text-sm text-gray-600">
                         <li><Link to="/products" onClick={() => handleClick("screens")}>شاشات كمبيوتر</Link></li>
-                        <li><Link to="/upper" onClick={() => handleClick("tv")}>شاشات تلفزيون</Link></li>
-                        <li><Link to="/electronics/accessories" onClick={() => handleClick("accessories")}>إكسسوارات</Link></li>
-                        <li><Link to="/electronics/cameras" onClick={() => handleClick("cameras")}>كاميرات رقمية</Link></li>
-                        <li><Link to="/electronics/tools" onClick={() => handleClick("tools")}>أدوات تصوير</Link></li>
-                        <li><Link to="/electronics/lenses" onClick={() => handleClick("lenses")}>عدسات نيكون</Link></li>
-                        <li><Link to="/electronics/imported-screens" onClick={() => handleClick("imported")}>شاشات استيراد</Link></li>
+                        <li><Link to="products" onClick={() => handleClick("tv")}>شاشات تلفزيون</Link></li>
+                        <li><Link to="/products" onClick={() => handleClick("accessories")}>إكسسوارات</Link></li>
+                        <li><Link to="/products" onClick={() => handleClick("cameras")}>كاميرات رقمية</Link></li>
+                        <li><Link to="/products" onClick={() => handleClick("tools")}>أدوات تصوير</Link></li>
+                        <li><Link to="/products" onClick={() => handleClick("lenses")}>عدسات نيكون</Link></li>
+                        <li><Link to="/products" onClick={() => handleClick("imported")}>شاشات استيراد</Link></li>
                       </ul>
                     )}
                   </div>
