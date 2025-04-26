@@ -7,7 +7,6 @@ import noCart from "@/assets/icons/noCartIcon.png";
 import { useGetQuery } from "@/api/useGetQuery";
 import { IProduct } from "@/types/product";
 
-
 // type ProductCardProps = {
 //   title: string;
 //   description: string;
@@ -90,6 +89,8 @@ export const ProductsLayout = () => {
   const sort = useAppSelector((state) => state.filters.sort);
   const minPrice = useAppSelector((state) => state.filters.minPrice);
   const maxPrice = useAppSelector((state) => state.filters.maxPrice);
+  const selectedCategory = useAppSelector((state) => state.filters.category);
+  console.log(selectedCategory);
 
   const {
     data: productsResponse = [],
@@ -110,6 +111,11 @@ export const ProductsLayout = () => {
         (product: IProduct) =>
           Number(product.price) >= minPrice && Number(product.price) <= maxPrice
       )
+      .filter((product: IProduct) =>
+        selectedCategory === "All"
+          ? true
+          : product.category.name === selectedCategory
+      )
       .sort((a: IProduct, b: IProduct) =>
         sortType === "desc"
           ? Number(b.price) - Number(a.price)
@@ -123,7 +129,7 @@ export const ProductsLayout = () => {
     if (products.length > 0) {
       setProductsState(getSortedProducts(sort, minPrice, maxPrice));
     }
-  }, [sort, minPrice, maxPrice, products]);
+  }, [sort, minPrice, maxPrice, products, selectedCategory]);
 
   const layoutSystem = useAppSelector((state) => state.filters.listStyle);
 
