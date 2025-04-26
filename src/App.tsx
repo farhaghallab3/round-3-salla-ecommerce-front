@@ -41,8 +41,8 @@ function App() {
           { path: "signin", element: <Login /> },
           { path: "register", element: <Signup /> },
           { path: "products", element: <Products /> },
-          {
-            path: "productDetails/:id",
+          {path: "products/ProductDetails/:id",
+
             element: (
               <PrivateRoute>
                 <ProductDetails />

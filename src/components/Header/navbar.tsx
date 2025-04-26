@@ -31,7 +31,7 @@ const HeaderNavbar: FC = () => {
 
 
   const bottomLinks = [
-    { label: 'كل المنتجات', to: '/upper' },
+    { label: 'كل المنتجات', to: '/products' },
     { label: 'الكترونيات', to: '/electronics' },
     { label: 'موبايلات', to: '/mobiles' },
     { label: 'كاميرات مراقبة', to: '/surveillance-cameras' },

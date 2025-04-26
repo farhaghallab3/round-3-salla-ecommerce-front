@@ -1,7 +1,7 @@
 import ProductBrands from "./ProductBrands";
 import { ProductDetailsTabs } from "./ProductDetailsTabs";
 import RelatedProducts from "./RelatedProducts";
-import ProductDetailsUpper from "./upper";
+import ProductDetailsUpper from "./ProductDetailsUpper";
 
 export default function ProductDetails() {
   return (
