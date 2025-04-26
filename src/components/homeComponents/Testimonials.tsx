@@ -22,8 +22,8 @@ export const Testimonials = () => {
         slides: { perView: 3, spacing: 20 },
       },
     },
-    slides: { perView: 1 },
-  });
+    slides: { perView: 1 ,spacing: 15 },
+  }); 
 
   const [reviews, setReviews] = useState<Review[]>([]);
 
@@ -66,10 +66,10 @@ export const Testimonials = () => {
             <ChevronLeft />
           </button>
         </div> 
-
+{reviews.length > 0 && (
         <div ref={sliderRef} className="keen-slider">
           {reviews.map((item) => (
-            <div
+            <div 
               key={item.id}
               className="keen-slider__slide border rounded-lg p-6 shadow-sm hover:shadow-md transition-all"
             >
@@ -94,6 +94,7 @@ export const Testimonials = () => {
             </div>
           ))}
         </div>
+      )}
       </div>
     </section>
   );
