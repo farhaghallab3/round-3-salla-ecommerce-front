@@ -68,7 +68,7 @@ const HeaderNavbar: FC = () => {
   }, []);
 
   return (
-
+<nav className='fixed top-0 left-0 w-full z-50 bg-white shadow-md'>
     <div className="w-full overflow-x-hidden max-w-[100vw] ">
       <header className="w-full border-b text-sm font-light ">
         {/* ✅ Top Bar */}
@@ -271,6 +271,7 @@ const HeaderNavbar: FC = () => {
 />
 
     </div>
+  </nav>
   );
 };
 

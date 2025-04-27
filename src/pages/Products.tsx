@@ -6,7 +6,7 @@ export const Products = () => {
   // scroll to top on page load
   window.scrollTo(0, 0);
   return (
-    <div className="flex gap-6 flex-row responsive-padding-x">
+    <div className="flex gap-6 flex-row responsive-padding-x mt-40">
       
       <Filters />
       <ProductsList />
