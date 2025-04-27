@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Box, Flame, Heart, Share2, Star } from "lucide-react";
-import samsungLogo from "@assets/images/brandsamasung.png";
+//import samsungLogo from "@assets/images/brandsamasung.png";
 import { Link } from "react-router-dom";
 
 interface Product {
@@ -62,7 +62,7 @@ const ProductInfo = () => {
   return (
     <div className="w-full md:w-1/2 space-y-4 pt-20">
       <div>
-        <img src={samsungLogo} alt="brand" className="w-16 mb-2" />
+      {/*  <img src={samsungLogo} alt="brand" className="w-16 mb-2" />*/}
         <h1 className="text-xl font-bold">{product.name}</h1>
 
         <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500 mt-4">

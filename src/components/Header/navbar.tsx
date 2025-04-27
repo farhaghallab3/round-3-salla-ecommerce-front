@@ -68,7 +68,7 @@ const HeaderNavbar: FC = () => {
   }, []);
 
   return (
-
+<nav className='fixed top-0 left-0 w-full z-50 bg-white shadow-md'>
     <div className="w-full overflow-x-hidden max-w-[100vw] ">
       <header className="w-full border-b text-sm font-light ">
         {/* ✅ Top Bar */}
@@ -171,7 +171,7 @@ const HeaderNavbar: FC = () => {
           <ShoppingCart size={20} className="text-gray-500 rounded-full h-6 w-6 bg-gray-100" />
           <div>
             <div className="text-gray-400">
-              <Link to="/">سلة المشتريات </Link>
+              <Link to="/Checkout">سلة المشتريات </Link>
 
             </div>
             <div className="font-semibold text-gray-700">1,200 رس</div>
@@ -236,7 +236,7 @@ const HeaderNavbar: FC = () => {
       <ShoppingCart size={20} className="text-gray-500 rounded-full h-6 w-6 bg-gray-100" />
       <div>
         <div className="text-gray-400">
-          <Link to="/">سلة المشتريات </Link>
+          <Link to="/Checkout">سلة المشتريات </Link>
         </div>
         <div className="font-semibold text-gray-700">1,200 رس</div>
       </div>
@@ -271,6 +271,7 @@ const HeaderNavbar: FC = () => {
 />
 
     </div>
+  </nav>
   );
 };
 
