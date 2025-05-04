@@ -60,7 +60,7 @@ export default function RelatedProducts() {
   // ];
 
   const {
-    data: products = [],
+    data: products = { data: [] },
     isLoading,
     isError,
     error,
@@ -97,7 +97,13 @@ export default function RelatedProducts() {
       </div>
 
       <div className="pt-xl w-full flex max-lg:flex-wrap">
-        {products.map((item: IProduct) => (
+        {"data" in products ? products.data.map((item: IProduct) => (
+          <div className="w-full md:w-1/2 lg:w-1/4 px-sm" key={item.id2}>
+            <div className="w-full pt-5">
+              <ProductCard {...item} />
+            </div>
+          </div>
+        )) : products.map((item: IProduct) => (
           <div className="w-full md:w-1/2 lg:w-1/4 px-sm" key={item.id2}>
             <div className="w-full pt-5">
               <ProductCard {...item} />
