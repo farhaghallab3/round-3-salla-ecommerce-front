@@ -64,7 +64,7 @@ export default function RelatedProducts() {
     isLoading,
     isError,
     error,
-  } = useGetQuery("products", "/products");
+  } = useGetQuery<IProduct[]>("products", "/products");
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -97,7 +97,7 @@ export default function RelatedProducts() {
       </div>
 
       <div className="pt-xl w-full flex max-lg:flex-wrap">
-        {products.data.map((item: IProduct) => (
+        {products.map((item: IProduct) => (
           <div className="w-full md:w-1/2 lg:w-1/4 px-sm" key={item.id2}>
             <div className="w-full pt-5">
               <ProductCard {...item} />

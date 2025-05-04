@@ -95,7 +95,7 @@ export const SpecialProducts = (Props: Props) => {
     return <div>Error: {error?.message}</div>;
   }
 
-  const products: IProduct[] = productsResponse.data ?? [];
+  const products: IProduct[] = (productsResponse as { data: IProduct[] }).data ?? [];
   return (
     <div className="responsive-padding-x responsive-margin-y mx-auto">
       {/* header */}

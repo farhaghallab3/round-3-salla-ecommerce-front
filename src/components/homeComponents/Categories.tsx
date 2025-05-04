@@ -20,7 +20,14 @@ export default function Categories() {
   if (isError) {
     return <div>Error: {error?.message}</div>;
   }
-  console.log(categories.data)
+  interface Category {
+    id: number;
+    image: string;
+    Category: string;
+    title: string;
+  }
+
+  console.log((categories as { data: Category[] }).data)
     const data =[{
         id:1,
         image:imageOne,

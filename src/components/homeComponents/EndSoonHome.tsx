@@ -6,14 +6,14 @@ import { useGetQuery } from "@/api/useGetQuery";
 
 export default function EndSoonHome() {
   const {
-    data: products = [],
+    data: products = { data: [] },
     isLoading,
     isError,
     error,
-  } = useGetQuery("products", "/products");
+  } = useGetQuery<{ data: { id: number; price: number; discount: number; end_discount: string; image: string; name: string; category: { name: string }; small_desc: string; reviews_average: number; has_discount: boolean }[] }>("products", "/products");
 
   const discountedProducts = products?.data?.filter(
-    (product: any) => product.has_discount === true
+    (product: { has_discount: boolean }) => product.has_discount === true
   );
 
   console.log("products", discountedProducts);
@@ -74,7 +74,7 @@ export default function EndSoonHome() {
         </div>
       </div>
       <div className="flex max-md:flex-wrap w-full gap-5 pt-xl">
-        {discountedProducts?.map((product: any) => {
+        {discountedProducts?.map((product: { id: number; price: number; discount: number; end_discount: string; image: string; name: string; category: { name: string }; small_desc: string; reviews_average: number }) => {
           const discountedPrice = Math.round(
             product.price - product.price * (product.discount / 100)
           );

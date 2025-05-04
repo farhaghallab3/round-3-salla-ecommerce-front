@@ -97,9 +97,9 @@ export const ProductsLayout = () => {
     isLoading,
     isError,
     error,
-  } = useGetQuery("products", "/products");
+  } = useGetQuery<{ data: IProduct[] }>("products", "/products");
 
-  const products = productsResponse.data ?? [];
+  const products = Array.isArray(productsResponse) ? [] : productsResponse.data ?? [];
 
   function getSortedProducts(
     sortType: string,
