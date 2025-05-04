@@ -1,7 +1,7 @@
 import { useQuery, UseQueryOptions, UseQueryResult } from '@tanstack/react-query';
 import baseApi from './baseApi';
 
-export const useGetQuery = <T = any>(
+export const useGetQuery = <T = unknown>(
   key: string,
   endpoint: string,
   options?: Omit<UseQueryOptions<T, Error, T, [string, string]>, 'queryKey' | 'queryFn'>
@@ -11,7 +11,7 @@ export const useGetQuery = <T = any>(
   return useQuery<T, Error, T, [string, string]>({
     queryKey: [key, endpoint],
     queryFn: async ({ queryKey }) => {
-      const [_key, _endpoint] = queryKey;
+      const [, _endpoint] = queryKey;
       const res = await baseApi.get(_endpoint);
       console.log("Request URL:", _endpoint);
       console.log("Response data:", res.data);

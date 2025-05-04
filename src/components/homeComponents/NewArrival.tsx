@@ -1,10 +1,7 @@
 import * as React from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { ProductCard } from "../commonComponents/ProductCard";
-// import headPhone from "@/assets/images/Image (7).png";
-// import airPods from "@/assets/images/Image (8).png";
-// import earPhone from "@/assets/images/Image (9).png";
-// import smartWhatch from "@/assets/images/ad-1.png";
+
 import {
   Carousel,
   CarouselContent,
@@ -13,25 +10,15 @@ import {
 import { useGetQuery } from "@/api/useGetQuery";
 import { IProduct } from "@/types/product";
 
-// type ProductCardProps = {
-//   category: string;
-//   title: string;
-//   description: string;
-//   price: number;
-//   image: string;
-//   oldPrice?: number;
-//   specialTag?: "جديد" | "خصم";
-// };
-
 export default function NewArrival() {
-  const [api, setApi] = React.useState<any>(null);
+  const [api, setApi] = React.useState<{ scrollPrev: () => void; scrollNext: () => void } | null>(null);
   //get the data from api using custom hook useGetQuery
   const {
-    data: products = [],
+    data: products = { data: [] },
     isLoading,
     isError,
     error,
-  } = useGetQuery("products", "/products");
+  } = useGetQuery<{ data: IProduct[] }>("products", "/products");
 
   console.log("products", products);
   //handel loading & error states
@@ -42,117 +29,7 @@ export default function NewArrival() {
   if (isError) {
     return <div>Error: {error?.message}</div>;
   }
-  //   const data: ProductCardProps[] = [
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: headPhone,
-  //     specialTag: "جديد"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: airPods,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: earPhone,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   },
-  //   {
-  //     category: "ساعات",
-  //     title: "ساعة ذكية جديدة من سلسلة 8",
-  //     description: "سوار رياضي اسود - عادي.",
-  //     price: 250.00,
-  //     oldPrice: 350.00,
-  //     image: smartWhatch,
-  //     specialTag: "خصم"
-  //   }
-  // ];
-
+  
   const scrollPrev = () => {
     if (api) api.scrollPrev();
   };
@@ -160,6 +37,7 @@ export default function NewArrival() {
   const scrollNext = () => {
     if (api) api.scrollNext();
   };
+  
 
   return (
     <div className="w-full mt-5xl responsive-padding-x responsive-padding-y bg-surface-secondary">
@@ -188,7 +66,7 @@ export default function NewArrival() {
 
       <div className="pt-xl w-full">
         <Carousel
-          setApi={setApi}
+          setApi={(api) => setApi(api ? { scrollPrev: api.scrollPrev, scrollNext: api.scrollNext } : null)}
           opts={{
             align: "start",
             slidesToScroll: 4,
@@ -196,7 +74,8 @@ export default function NewArrival() {
           className="w-full"
         >
           <CarouselContent>
-            {products.data.map((item: IProduct) => (
+            {Array.isArray(products?.data) &&
+            products.data.map((item: IProduct) => (
               <CarouselItem
                 key={item.id2}
                 className="basis-full md:basis-1/2 lg:basis-1/4"

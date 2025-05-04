@@ -58,12 +58,11 @@ export const Filters = () => {
   const [showMore, setShowMore] = useState(false);
 
   const {
-    // set data to Categories type
     data,
     isLoading,
     isError,
     error,
-  } = useGetQuery("categories", "/categories");
+  } = useGetQuery<{ data: Categories[] }>("categories", "/categories");
 
   const handleCategoryChange = (category: string) => {
     if (category === "All") {
@@ -73,11 +72,13 @@ export const Filters = () => {
     }
   };
   useEffect(() => {
-    if (data) {
+    if (data && Array.isArray(data.data)) {
       setCategories(data.data);
+    } else {
+      setCategories([]);
     }
   }, [data]);
-
+  
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -116,7 +117,7 @@ export const Filters = () => {
                   </label>
 
                   {/* other filters */}
-                  {categories.slice(0, categoriesAmount).map((filter) => (
+                  {(categories || []).slice(0, categoriesAmount).map((filter) => (
                     <label key={filter.id} className="flex items-center gap-2">
                       <input
                         type="checkbox"

@@ -32,14 +32,14 @@ const HeaderNavbar: FC = () => {
 
   const bottomLinks = [
     { label: 'كل المنتجات', to: '/products' },
-    { label: 'الكترونيات', to: '/electronics' },
-    { label: 'موبايلات', to: '/mobiles' },
-    { label: 'كاميرات مراقبة', to: '/surveillance-cameras' },
-    { label: 'سماعات رقمية', to: '/digital-speakers' },
-    { label: 'كاميرات رقمية', to: '/digital-cameras' },
-    { label: 'اكسسوارات', to: '/accessories' },
-    { label: 'شاشات كمبيوتر', to: '/computer-screens' },
-    { label: 'سماعات', to: '/headphones' },
+    { label: 'الكترونيات', to: '/products' },
+    { label: 'موبايلات', to: '/products' },
+    { label: 'كاميرات مراقبة', to: '/products' },
+    { label: 'سماعات رقمية', to: '/products' },
+    { label: 'كاميرات رقمية', to: '/products' },
+    { label: 'اكسسوارات', to: '/products' },
+    { label: 'شاشات كمبيوتر', to: '/products' },
+    { label: 'سماعات', to: '/products' },
   ];
 
   const user = {
