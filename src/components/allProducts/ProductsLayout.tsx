@@ -90,16 +90,18 @@ export const ProductsLayout = () => {
   const minPrice = useAppSelector((state) => state.filters.minPrice);
   const maxPrice = useAppSelector((state) => state.filters.maxPrice);
   const selectedCategory = useAppSelector((state) => state.filters.category);
-  console.log(selectedCategory);
 
   const {
-    data: productsResponse = { data: [] },
+    data: productsResponse = {data: []},
     isLoading,
     isError,
     error,
   } = useGetQuery<{ data: IProduct[] }>("products", "/products");
+  
+  const products = Array.isArray(productsResponse?.data) ? productsResponse.data : [];
 
-  const products = productsResponse.data;
+
+  
 
   function getSortedProducts(
     sortType: string,
@@ -126,9 +128,7 @@ export const ProductsLayout = () => {
   const [productsState, setProductsState] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    if (products.length > 0) {
-      setProductsState(getSortedProducts(sort, minPrice, maxPrice));
-    }
+    setProductsState(getSortedProducts(sort, minPrice, maxPrice));
   }, [sort, minPrice, maxPrice, products, selectedCategory]);
 
   const layoutSystem = useAppSelector((state) => state.filters.listStyle);
@@ -176,3 +176,4 @@ export const ProductsLayout = () => {
     </div>
   );
 };
+
