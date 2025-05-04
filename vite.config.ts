@@ -13,5 +13,5 @@ export default defineConfig({
     },
   },
   plugins: [react(), tailwindcss()],
-  base: '/round-3-salla-ecommerce-front/'
+  base: ''
 });
