@@ -54,7 +54,7 @@ function App() {
         ],
       },
     ],
-    { basename: "/round-3-salla-ecommerce-front" }
+    { basename: "" }
   );
 
   return (
